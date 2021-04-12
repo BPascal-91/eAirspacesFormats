@@ -1,5 +1,5 @@
 `AIXM`_ Format - Aeronautical Information Exchange Modele
---------------
+===================
 .. image:: res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
