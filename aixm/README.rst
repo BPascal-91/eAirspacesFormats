@@ -1,17 +1,9 @@
-.. image:: aixm/res/aixm_v4.5.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v4.5.0
-.. image:: aixm/res/aixm_v5.1.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v5.1.0
-
-
 `AIXM`_ Format - :code:`Aeronautical Information Exchange Modele`
 --------------
-.. image:: aixm/res/aixm_v4.5.0.svg
+.. image:: res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
-.. image:: aixm/res/aixm_v5.1.0.svg
+.. image:: res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
 
