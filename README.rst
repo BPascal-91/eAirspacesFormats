@@ -14,13 +14,13 @@
    :target: `FAF`_
    :alt: `FAF`_
 
-
+==============
 `eAirspacesFormats`_ - Electreonic Airspaces Formats
+Présentation des formalismes électroniques utilisés pour la description des espaces-aériens et infrastructures positionnées au sol.
 ==============
 
-Présentation des formalismes électroniques utilisés pour la description des zones contituant l'espace-aérien ainsi que les infrastructures positionnées au sol.
 
-Description des formalismes électroniques utilisés pour la description des espaces-aériens.
+-------------
 Ces formalismes sont ceux nécessaires pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
 Ces cartographies sont référencées sur la Plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
 Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files (on Facebook)`_.
@@ -36,7 +36,7 @@ Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files
 .. contents::
    :backlinks: none
    :local:
-
+==============
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
 --------------
