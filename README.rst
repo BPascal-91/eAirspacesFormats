@@ -6,17 +6,19 @@
    :alt: `Openair (on GitHub)`_
 
 
-eAirspacesFormats - Electreonic Airspaces Formats / Formalismes électroniques pour la description des espaces-aériens
+eAirspacesFormats - Electreonic Airspaces Formats
 ==============
 
 Présentation des formalismes électroniques utilisés pour la description des zones contituant l'espace-aérien ainsi que les infrastructures positionnées au niveau des terrains.
+
 .. code::
 
 	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
 	/!\ WARNING  : Only official data must be used for air navigation
 
-Les formalismes décrits sont nécessaires et utilisés pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
-Référencement de ces cartographies sur la Plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_
+Description des formalismes électroniques utilisés pour la description des espaces-aériens.
+Ces formalismes sont ceux nécessaires pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
+Ces cartographies sdont référencées sur la Plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_
 Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files (on Facebook)`_.
 
 
@@ -37,20 +39,18 @@ Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files
    :alt: `AIXM`_ v5.1.0
 
 Format normalisé d'échange d'information aéronautiques.
-.. code::
 
-The objective of the Aeronautical Information Exchange Model (AIXM) is to enable the provision in digital format of the aeronautical information that is in the scope of Aeronautical Information Services (AIS). The AIS information/data flows that are increasingly complex and made up of interconnected systems. They involve many actors including multiple suppliers and consumers. There is also a growing need in the global Air Traffic Management (ATM) system for high data quality and for cost efficiency.
-../..
-The following main information areas are in the scope of AIXM:
-
-    Aerodrome/Heliport including movement areas, services, facilities, etc.
-    Airspace structures
-    Organisations and units, including services
-    Points and Navaids
-    Procedures
-    Routes
-    Flying restrictions
-../..
+	The objective of the Aeronautical Information Exchange Model (AIXM) is to enable the provision in digital format of the aeronautical information that is in the scope of Aeronautical Information Services (AIS). The AIS information/data flows that are increasingly complex and made up of interconnected systems. They involve many actors including multiple suppliers and consumers. There is also a growing need in the global Air Traffic Management (ATM) system for high data quality and for cost efficiency.
+	../..
+	The following main information areas are in the scope of AIXM:
+		Aerodrome/Heliport including movement areas, services, facilities, etc.
+		Airspace structures
+		Organisations and units, including services
+		Points and Navaids
+		Procedures
+		Routes
+		Flying restrictions
+	../..
 
 
 `Openair`_ Format - Open Airspace and terrain description language
