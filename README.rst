@@ -38,7 +38,7 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
 
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
---------------
+-------------------
 .. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
@@ -51,7 +51,7 @@ Description complète -> `AIXM`_
 
 
 `Openair`_ Format - Open Airspace and terrain description language
---------------
+-------------------
 .. image:: openair/res/openair_v1.0.0.svg
    :target: `Openair`_
    :alt: `Openair`_
@@ -64,23 +64,23 @@ Description complète -> `Openair`_
 
 
 `FAF`_ Format -  `Flytec`_ Airspace Formatted
---------------
+-------------------
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
 
-Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ et utilisable pour les appareils Flytec ou Brauniger
+Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
 Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD
 Description complète -> `FAF`_
 
 
 Licence
--------
+-------------------
 `Licence-GPL3`_
 
 
 Crédit
-------
+-------------------
 * `Pascal Bazile`_ main initiator
 
 
