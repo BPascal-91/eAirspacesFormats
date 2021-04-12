@@ -1,21 +1,12 @@
-.. image:: https://github.com/BPascal-91/poaff/res/poaff_lastVersion.svg
-   :target: `Paragliding OpenAir French Files`_
-   :alt: `Paragliding OpenAir French Files (on GitHub)`_
-.. image:: https://github.com/BPascal-91/poaff/res/poaff_lastVersion.svg
-   :target: `Openair (on GitHub)`_
-   :alt: `Openair (on GitHub)`_
 .. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
 .. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
-.. image:: openair/res/poaff_lastVersion.svg
-   :target: `Paragliding OpenAir French Files`_
-   :alt: `Paragliding OpenAir French Files (on GitHub)`_
 .. image:: openair/res/openair_v1.0.0.svg
-   :target: `Openair`_
-   :alt: `Openair`_
+   :target: `OpenAir`_
+   :alt: `OpenAir`_
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_
