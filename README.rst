@@ -36,26 +36,6 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
    :local:
 
 
-`AIXM`_ Format - Aeronautical Information Exchange Modele
--------------------
-.. image:: aixm/res/aixm_v4.5.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v4.5.0
-.. image:: aixm/res/aixm_v5.1.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v5.1.0
-Format normalisé d'échange d'information aéronautiques ../..
-Description complète -> `AIXM`_
-
-
-`OFMX`_ Format - Open FlightMaps eXchange
--------------------
-.. image:: ofmx/res/ofmx_v?.?.?.svg
-   :target: `OFMX`_
-   :alt: `OFMX`_ v?.?.?
-OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
-Description complète -> `OFMX Documentation`_
-
 `Openair`_ Format - Open Airspace and terrain description language
 -------------------
 .. image:: openair/res/openair_v1.0.0.svg
@@ -76,6 +56,27 @@ Description complète -> `Openair`_
 Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
 Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD
 Description complète -> `FAF`_
+
+
+`AIXM`_ Format - Aeronautical Information Exchange Modele
+-------------------
+.. image:: aixm/res/aixm_v4.5.0.svg
+   :target: `AIXM`_
+   :alt: `AIXM`_ v4.5.0
+.. image:: aixm/res/aixm_v5.1.0.svg
+   :target: `AIXM`_
+   :alt: `AIXM`_ v5.1.0
+Format normalisé d'échange d'information aéronautiques ../..
+Description complète -> `AIXM`_
+
+
+`OFMX`_ Format - Open FlightMaps eXchange
+-------------------
+.. image:: ofmx/res/ofmx_v-.-.-.svg
+   :target: `OFMX`_
+   :alt: `OFMX`_ v?.?.?
+OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
+Description complète -> `OFMX Documentation`_
 
 
 Licence
