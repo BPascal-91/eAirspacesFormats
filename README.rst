@@ -110,10 +110,10 @@ Crédit
 
 .. _Pascal Bazile: https://github.com/BPascal-91/
 .. _eAirspacesFormats: https://github.com/BPascal-91/eAirspacesFormats/
-.. _POAFF (on GitHub): https://github.com/BPascal-91/poaff/
-.. _Paragliding OpenAir French Files (on OpenData): `POAFF (on GitHub)`_
 .. _Paragliding OpenAir French Files: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
-.. _Paragliding OpenAir French Files (on Facebook): 
+.. _Paragliding OpenAir French Files (on OpenData): https://www.data.gouv.fr/fr/datasets/cartographies-aeriennes-dediees-a-la-pratique-du-vol-libre/
+.. _Paragliding OpenAir French Files (on Facebook): https://www.facebook.com/Paragliding-OpenAir-FrenchFiles-102040114894513
+.. _POAFF (on GitHub): https://github.com/BPascal-91/poaff/
 .. _aixmParser (on GitHub): https://github.com/BPascal-91/aixmParser/
 .. _openairParser (on GitHub): https://github.com/BPascal-91/openairParser/
 
