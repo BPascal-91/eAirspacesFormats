@@ -16,11 +16,10 @@
 
 
 `eAirspacesFormats`_ - Electreonic Airspaces Formats
-==============
+===================
 Présentation des formalismes électroniques utilisés pour la description des espaces-aériens et infrastructures positionnées au sol.
 
 
--------------
 Ces formalismes sont ceux nécessaires pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
 Ces cartographies sont référencées sur la Plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
 Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files (on Facebook)`_.
@@ -29,7 +28,7 @@ Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files
 
 	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
 	/!\ WARNING  : Only official data must be used for air navigation
--------------
+
 
 **Table of Contents**
 
