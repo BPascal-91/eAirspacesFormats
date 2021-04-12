@@ -13,6 +13,9 @@
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
+.. image:: ofmx/res/ofmx_v-.-.-.svg
+   :target: `OFMX`_
+   :alt: `OFMX`_ v?.?.?
 
 
 `eAirspacesFormats`_ - Electreonic Airspaces Formats
@@ -48,7 +51,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 Description complète -> `Openair`_
 
 
-`FAF`_ Format -  `Flytec`_ Airspace Formatted
+`FAF`_ Format - `Flytec`_ Airspace Formatted
 -------------------
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
@@ -77,6 +80,17 @@ Description complète -> `AIXM`_
    :alt: `OFMX`_ v?.?.?
 OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
 Description complète -> `OFMX Documentation`_
+
+
+`KML`_ Format - KML Documentation
+-------------------
+Description complète -> `KML`_
+
+   
+`XML`_ Format - XML Documentation
+-------------------
+Description complète -> `XML`_
+
 
 
 Licence
@@ -121,10 +135,8 @@ Crédit
 .. _GeoJSON (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/geojson/#readme
 .. _GeoJSON: http://geojson.org/
 
-.. _KML: `KML (on GitHub)'_
-.. _KML (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/kml/#readme
-.. _KML Documentation: https://developers.google.com/kml/documentation
-.. _XML Documentation: https://www.w3.org/TR/xml/
+.. _KML: https://developers.google.com/kml/documentation/
+.. _XML: https://www.w3.org/TR/xml/
 
 .. _pip: http://www.pip-installer.org
 .. _Licence-GPL3: https://www.gnu.org/licenses/gpl-3.0.html
