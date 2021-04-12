@@ -60,7 +60,7 @@ Crédit
 .. _Paragliding OpenAir French Files: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
 .. _AIXM: `AIXM (on GitHub)`_
-.. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/AIXM
+.. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/aixm
 .. _AIXM Standard: http://www.aixm.aero/
 .. _AIXM v4.5: https://www.aixm.aero/page/aixm-45
 .. _AIXM v5.1: https://www.aixm.aero/page/aixm-51-511

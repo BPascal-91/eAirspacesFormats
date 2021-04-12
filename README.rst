@@ -15,7 +15,7 @@
    :alt: `FAF`_
 
 
-eAirspacesFormats - Electreonic Airspaces Formats
+`eAirspacesFormats`_ - Electreonic Airspaces Formats
 ==============
 
 Présentation des formalismes électroniques utilisés pour la description des zones contituant l'espace-aérien ainsi que les infrastructures positionnées au sol.
@@ -38,7 +38,7 @@ Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files
    :local:
 
 
-`AIXM`_ :code:`(Aeronautical Information Exchange Modele)` Format
+`AIXM`_ Format - Aeronautical Information Exchange Modele
 --------------
 .. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
@@ -109,35 +109,38 @@ Crédit
 
 
 .. _Pascal Bazile: https://github.com/BPascal-91/
+.. _eAirspacesFormats: https://github.com/BPascal-91/eAirspacesFormats/
 .. _POAFF (on GitHub): https://github.com/BPascal-91/poaff/
+.. _Paragliding OpenAir French Files (on OpenData): `POAFF (on GitHub)`_
 .. _Paragliding OpenAir French Files: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
+.. _Paragliding OpenAir French Files (on Facebook): 
 .. _aixmParser (on GitHub): https://github.com/BPascal-91/aixmParser/
 .. _openairParser (on GitHub): https://github.com/BPascal-91/openairParser/
 
 .. _AIXM: `AIXM (on GitHub)`_
-.. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/AIXM
+.. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/aixm
 .. _AIXM Standard: http://www.aixm.aero/
 .. _Eurocontrol: https://www.eurocontrol.int/
 
 .. _Openair: `Openair (on GitHub)`_
-.. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/openair
+.. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair
 .. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
 .. _FAF: `FAF (on GitHub)`_
-.. _FAF (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/faf
+.. _FAF (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/faf
 .. _Flytec: https://www.flytec.com/
 
 .. _GeoJSON (on GitHub): `GeoJSON (on GitHub)`_
-.. _GeoJSON (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/geojson
+.. _GeoJSON (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/geojson
 .. _GeoJSON: http://geojson.org/
 
 .. _KML: `KML (on GitHub)'_
-.. _KML (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/kml
+.. _KML (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/kml
 .. _KML Documentation: https://developers.google.com/kml/documentation
 .. _XML Documentation: https://www.w3.org/TR/xml/
 
-.. _OACI (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/OACI
+.. _OACI (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/oaci
 .. _France Carte OACI: https://www.geoportail.gouv.fr/donnees/carte-oaci-vfr
 .. _France SIA: https://www.sia.aviation-civile.gouv.fr/
 .. _France SIA-data: https://www.sia.aviation-civile.gouv.fr/produits-numeriques-en-libre-disposition.html
@@ -146,3 +149,4 @@ Crédit
 
 .. _pip: http://www.pip-installer.org
 .. _Licence-GPL3: https://www.gnu.org/licenses/gpl-3.0.html
+
