@@ -6,6 +6,7 @@
 .. image:: res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
+Format normalisé d'échange d'information aéronautiques.
 
 
 **Table of Contents**
@@ -17,8 +18,6 @@
 
 Description
 -----------
-Format normalisé d'échange d'information aéronautiques.
-
 	The objective of the Aeronautical Information Exchange Model (AIXM) is to enable the provision in digital format of the aeronautical information that is in the scope of Aeronautical Information Services (AIS). The AIS information/data flows that are increasingly complex and made up of interconnected systems. They involve many actors including multiple suppliers and consumers. There is also a growing need in the global Air Traffic Management (ATM) system for high data quality and for cost efficiency.
 	../..
 	The following main information areas are in the scope of AIXM:

@@ -19,7 +19,6 @@
 ===================
 Présentation des formalismes électroniques utilisés pour la description des espaces-aériens et infrastructures positionnées au sol.
 
-
 Ces formalismes sont ceux nécessaires pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
 Ces cartographies sont référencées sur la plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
 Vous pouvez également suivre les évolutions via la page de communication `Paragliding OpenAir French Files (on Facebook)`_.
@@ -39,15 +38,13 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
 -------------------
-.. image:: aixm/res/aixm_v4.5.0.svg
+Format normalisé d'échange d'information aéronautiques ../..
+Description complète -> .. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
 .. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
-
-Format normalisé d'échange d'information aéronautiques ../..
-Description complète -> `AIXM`_
 
 
 `Openair`_ Format - Open Airspace and terrain description language
@@ -57,8 +54,7 @@ Description complète -> `AIXM`_
    :alt: `Openair`_
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
-   :alt: `Openair`_
-   
+   :alt: `Openair`_  
 Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 Description complète -> `Openair`_
 
@@ -68,7 +64,6 @@ Description complète -> `Openair`_
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
-
 Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
 Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD
 Description complète -> `FAF`_
