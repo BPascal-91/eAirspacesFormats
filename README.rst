@@ -4,6 +4,21 @@
 .. image:: https://github.com/BPascal-91/poaff/res/poaff_lastVersion.svg
    :target: `Openair (on GitHub)`_
    :alt: `Openair (on GitHub)`_
+.. image:: aixm/res/aixm_v4.5.0.svg
+   :target: `AIXM`_
+   :alt: `AIXM`_ v4.5.0
+.. image:: aixm/res/aixm_v5.1.0.svg
+   :target: `AIXM`_
+   :alt: `AIXM`_ v5.1.0
+.. image:: openair/res/poaff_lastVersion.svg
+   :target: `Paragliding OpenAir French Files`_
+   :alt: `Paragliding OpenAir French Files (on GitHub)`_
+.. image:: openair/res/openair_v1.0.0.svg
+   :target: `Openair`_
+   :alt: `Openair`_
+.. image:: openair/res/openair_betaVersion.svg
+   :target: `Openair`_
+   :alt: `Openair`_
 
 
 eAirspacesFormats - Electreonic Airspaces Formats
@@ -31,10 +46,10 @@ Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files
 
 `AIXM`_ :code:`(Aeronautical Information Exchange Modele)` Format
 --------------
-.. image:: `AIXM`_/res/aixm_v4.5.0.svg
+.. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
-.. image:: `AIXM`_/res/aixm_v5.1.0.svg
+.. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
 
@@ -55,10 +70,10 @@ Format normalisé d'échange d'information aéronautiques.
 
 `Openair`_ Format - Open Airspace and terrain description language
 --------------
-.. image:: `Openair`_/res/openair_v1.0.0.svg
+.. image:: openair/res/openair_v1.0.0.svg
    :target: `Openair`_
    :alt: `Openair`_
-.. image:: `Openair`_/res/openair_betaVersion.svg
+.. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_
    
