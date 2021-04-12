@@ -82,6 +82,11 @@ OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to valid
 Description complète -> `OFMX Documentation`_
 
 
+`_GeoJSON`_ Format - GeoJSON Documentation
+-------------------
+Description complète -> `_GeoJSON`_
+
+
 `KML`_ Format - KML Documentation
 -------------------
 Description complète -> `KML`_
@@ -114,14 +119,6 @@ Crédit
 .. _aixmParser (on GitHub): https://github.com/BPascal-91/aixmParser/#readme
 .. _openairParser (on GitHub): https://github.com/BPascal-91/openairParser/#readme
 
-.. _AIXM: `AIXM (on GitHub)`_
-.. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/aixm/#readme
-.. _AIXM Standard: http://www.aixm.aero/
-.. _Eurocontrol: https://www.eurocontrol.int/
-
-.. _OFMX: `OFMX (on GitHub)`_
-.. _OFMX (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/ofmx/#readme
-.. _OFMX Documentation: https://gitlab.com/openflightmaps/ofmx/-/wikis/home
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
 .. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
@@ -131,10 +128,13 @@ Crédit
 .. _FAF (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/faf/#readme
 .. _Flytec: https://www.flytec.com/
 
-.. _GeoJSON (on GitHub): `GeoJSON (on GitHub)`_
-.. _GeoJSON (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/geojson/#readme
-.. _GeoJSON: http://geojson.org/
+.. _AIXM: `AIXM (on GitHub)`_
+.. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/aixm/#readme
+.. _AIXM Standard: http://www.aixm.aero/
+.. _Eurocontrol: https://www.eurocontrol.int/
 
+.. _OFMX: https://gitlab.com/openflightmaps/ofmx/-/wikis/home
+.. _GeoJSON: http://geojson.org/
 .. _KML: https://developers.google.com/kml/documentation/
 .. _XML: https://www.w3.org/TR/xml/
 
