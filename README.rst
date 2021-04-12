@@ -10,6 +10,9 @@
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_
+.. image:: faf/res/faf_betaVersion.svg
+   :target: `FAF`_
+   :alt: `FAF`_
 
 
 eAirspacesFormats - Electreonic Airspaces Formats
@@ -73,9 +76,9 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 `FAF`_ Format -  `Flytec`_ Airspace Formatted
 --------------
-.. image:: `FAF (on GitHub)`_/res/faf_lastVersion.svg
-   :target: `FAF (on GitHub)`_
-   :alt: `FAF (on GitHub)`_
+.. image:: faf/res/faf_betaVersion.svg
+   :target: `FAF`_
+   :alt: `FAF`_
 
 Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ et utilisable pour les appareils Flytec ou Brauniger
 Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD
