@@ -1,7 +1,7 @@
-.. image:: `POAFF (on GitHub)`_/res/poaff_lastVersion.svg
+.. image:: https://github.com/BPascal-91/poaff/res/poaff_lastVersion.svg
    :target: `Paragliding OpenAir French Files`_
    :alt: `Paragliding OpenAir French Files (on GitHub)`_
-.. image:: `Openair (on GitHub)`_/res/poaff_lastVersion.svg
+.. image:: https://github.com/BPascal-91/poaff/res/poaff_lastVersion.svg
    :target: `Openair (on GitHub)`_
    :alt: `Openair (on GitHub)`_
 
@@ -9,17 +9,17 @@
 eAirspacesFormats - Electreonic Airspaces Formats
 ==============
 
-Présentation des formalismes électroniques utilisés pour la description des zones contituant l'espace-aérien ainsi que les infrastructures positionnées au niveau des terrains.
-
-.. code::
-
-	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
-	/!\ WARNING  : Only official data must be used for air navigation
+Présentation des formalismes électroniques utilisés pour la description des zones contituant l'espace-aérien ainsi que les infrastructures positionnées au sol.
 
 Description des formalismes électroniques utilisés pour la description des espaces-aériens.
 Ces formalismes sont ceux nécessaires pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
 Ces cartographies sdont référencées sur la Plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_
 Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files (on Facebook)`_.
+
+.. code::
+
+	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
+	/!\ WARNING  : Only official data must be used for air navigation
 
 
 **Table of Contents**
