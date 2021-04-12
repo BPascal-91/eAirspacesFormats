@@ -21,8 +21,8 @@ Présentation des formalismes électroniques utilisés pour la description des e
 
 
 Ces formalismes sont ceux nécessaires pour la génération des cartographies publiées sur le blog `Paragliding OpenAir French Files`_.
-Ces cartographies sont référencées sur la Plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
-Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files (on Facebook)`_.
+Ces cartographies sont référencées sur la plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
+Vous pouvez également suivre les évolutions via la page de communication `Paragliding OpenAir French Files (on Facebook)`_.
 
 .. code::
 
@@ -46,19 +46,8 @@ Vous pouvez suivre les évolutions via la page `Paragliding OpenAir French Files
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
 
-Format normalisé d'échange d'information aéronautiques.
-
-	The objective of the Aeronautical Information Exchange Model (AIXM) is to enable the provision in digital format of the aeronautical information that is in the scope of Aeronautical Information Services (AIS). The AIS information/data flows that are increasingly complex and made up of interconnected systems. They involve many actors including multiple suppliers and consumers. There is also a growing need in the global Air Traffic Management (ATM) system for high data quality and for cost efficiency.
-	../..
-	The following main information areas are in the scope of AIXM:
-		Aerodrome/Heliport including movement areas, services, facilities, etc.
-		Airspace structures
-		Organisations and units, including services
-		Points and Navaids
-		Procedures
-		Routes
-		Flying restrictions
-	../..
+Format normalisé d'échange d'information aéronautiques ../..
+Description complète -> `AIXM`_
 
 
 `Openair`_ Format - Open Airspace and terrain description language
@@ -71,6 +60,7 @@ Format normalisé d'échange d'information aéronautiques.
    :alt: `Openair`_
    
 Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
+Description complète -> `Openair`_
 
 
 `FAF`_ Format -  `Flytec`_ Airspace Formatted
@@ -81,8 +71,8 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ et utilisable pour les appareils Flytec ou Brauniger
 Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD
+Description complète -> `FAF`_
 
-    
 
 Licence
 -------
