@@ -10,7 +10,7 @@
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_
-.. image:: faf/res/faf_betaVersion.svg
+.. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
 
@@ -76,7 +76,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 `FAF`_ Format -  `Flytec`_ Airspace Formatted
 --------------
-.. image:: faf/res/faf_betaVersion.svg
+.. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
 
