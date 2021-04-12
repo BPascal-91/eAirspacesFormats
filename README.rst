@@ -38,14 +38,23 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
 -------------------
-Format normalisé d'échange d'information aéronautiques ../..
-Description complète -> .. image:: aixm/res/aixm_v4.5.0.svg
+.. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
 .. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
+Format normalisé d'échange d'information aéronautiques ../..
+Description complète -> `AIXM`_
 
+
+`OFMX`_ Format - Open FlightMaps eXchange
+-------------------
+.. image:: ofmx/res/ofmx_v?.?.?.svg
+   :target: `OFMX`_
+   :alt: `OFMX`_ v?.?.?
+OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
+Description complète -> `OFMX Documentation`_
 
 `Openair`_ Format - Open Airspace and terrain description language
 -------------------
@@ -95,6 +104,9 @@ Crédit
 .. _AIXM Standard: http://www.aixm.aero/
 .. _Eurocontrol: https://www.eurocontrol.int/
 
+.. _OFMX: `OFMX (on GitHub)`_
+.. _OFMX (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/ofmx/#readme
+.. _OFMX Documentation: https://gitlab.com/openflightmaps/ofmx/-/wikis/home
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
 .. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
