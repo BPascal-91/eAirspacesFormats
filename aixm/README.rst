@@ -1,4 +1,5 @@
 |imgAixm45|  |imgAixm51|
+
 `AIXM`_ Format - Aeronautical Information Exchange Modele
 =========================================================
 Format normalisé d'échange d'information aéronautiques ; défini et maintenu conjointement par l'Organisation Européenne pour la sécurité de la navigation aérienne (`Eurocontrol`_) et la Federal Aviation Administration (`FAA`_) des États-Unis.
