@@ -43,13 +43,21 @@ Vous trouverez ci-dessous; la description historique du format 'Openair' ; compl
 
 	**AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]**
 	
-		- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, ...]
-		- 'TypeMhz'** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
-		- **'CodeActivity'** - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
+		- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole]
+		- **'TypeMhz'** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
+		- **'CodeActivity'** - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARAGLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
 		- **'SeeNOTAM'** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
 		- **'Upper'** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
 		- **'Lower'** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
 
+	**Exemples**
+		- AN R KOKSIJDE (MILOPS)
+		- AN RMZ MORLAIX Twr(118.500)
+		- AN ZRT A400M Twr(124.800) (SeeNotam)
+		- AN TMA ETAIN 1 App(120.125) (SeeNotam)
+		- AN FFVL-Prot LE TOUQUET Twr(118.450) (PARAGLIDER)
+		- AN CTR CHAMBERY 1 Twr(118.300) Upper(3500FT AMSL-1000FT AGL)
+		- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 
 Official Data or Map
