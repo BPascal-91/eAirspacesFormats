@@ -16,10 +16,27 @@ Description
 -----------
 Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 
-
 Documentation
 -------------
-* `Openair Standard`_ - Version: |imgOpenair10|
+`Openair 1.0.0`_ - Version initiale |imgOpenair10| ; puis une première extension `Openair 1.0.1`_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Openair Extended** - Version étandue |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Le format **OpenAir** a pris naissance dans les années 1990. Depuis 30 ans maintenant, ce langage perdure car il est encore utilisé par de nombreux outils cartographique ou appreils de géolocalisation de type GPS.
+De nos jours; le besoin des pilotes a évolué. L'information aéronautique est maintenant digitalisée et les capcités informatique mis a disposition des pilotes n'a cessé de progresser.
+Il est donc temps de faire évoluer ce format historique afin de répondre aux nouveaux enjeux ciblés. 
+
+Pour ce faire, plusieurs informations ont étés ajoutés dans le format OpenAir.
+Vous trouverez ci-dessous; la description historique du format 'Openair' ; complété des informations nouvellements ajoutées pour étendre ses capacités: 
+
+1. **AC** Airspace Class - Classification des zones aériennes
+	* |imgOpenair10| Liste des éléments reconnus: ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=restricted, 'Q'=danger, 'GP'=Glider Prohibited, 'W'=Wave Window, 'Other'=Others classification]
+	* `Openair 1.0.1`_ 
+	* |imgOpenairBeta| Extensions à la liste ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
+	
+2. **AN** Airspace Class - Classification des zones aériennes
 
 
 
@@ -35,7 +52,7 @@ Crédit
 
 
 .. |imgOpenair10| image:: res/openair_v1.0.0.svg
-   :target: `Openair Standard`_
+   :target: `Openair 1.0.0`_
    :alt: `OpenAir`_
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
    :target: `Openair`_
@@ -46,7 +63,8 @@ Crédit
 
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
-.. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
+.. _Openair 1.0.0: http://www.winpilot.com/UsersGuide/UserAirspace.asp
+.. _Openair 1.0.1: https://notaminfo.com/exporthelp#stdopenair
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
 .. _Licence-GPL3: https://www.gnu.org/licenses/gpl-3.0.html
