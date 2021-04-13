@@ -27,9 +27,8 @@ Ces cartographies sont référencées sur la plateforme OpenData Française - `P
 Vous pouvez également suivre les évolutions via la page de communication `Paragliding OpenAir French Files (on Facebook)`_.
 
 .. code::
-
 	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
-	/!\ WARNING  : Only official data must be used for air navigation
+	/!\ WARNING  : Only official data must be used for air navigation.
 
 
 **Table of Contents**
@@ -53,8 +52,9 @@ Formatismes
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_  
-Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
-Description complète -> `Openair`_
+.. code::
+	Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
+	Description complète -> `Openair`_
 
 
 `FAF`_ Format - `Flytec`_ Airspace Formatted
@@ -62,9 +62,10 @@ Description complète -> `Openair`_
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
-Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
-Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD
-Description complète -> `FAF`_
+.. code::
+	Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
+	Description complète -> `FAF`_
+	*Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD.*
 
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
@@ -75,8 +76,9 @@ Description complète -> `FAF`_
 .. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
-Format normalisé d'échange d'information aéronautiques ../..
-Description complète -> `AIXM`_
+.. code::
+	Format normalisé d'échange d'information aéronautiques ../..
+	Description complète -> `AIXM`_
 
 
 `OFMX`_ Format - Open FlightMaps eXchange
@@ -84,23 +86,27 @@ Description complète -> `AIXM`_
 .. image:: ofmx/res/ofmx_v-.-.-.svg
    :target: `OFMX`_
    :alt: `OFMX`_ v?.?.?
-OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
-Description complète -> `OFMX`_
+.. code::
+	OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
+	Description complète -> `OFMX`_
 
 
 `GeoJSON`_ Format - GeoJSON Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Description complète -> `GeoJSON`_
+.. code::
+	Description complète -> `GeoJSON`_
 
 
 `KML`_ Format - KML Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Description complète -> `KML`_
+.. code::
+	Description complète -> `KML`_
 
    
 `XML`_ Format - XML Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Description complète -> `XML`_
+.. code::
+	Description complète -> `XML`_
 
 
 
@@ -117,11 +123,6 @@ Official Data or Map
 * `France DIRCAM-data`_ - SUPAIP (via `France DIRCAM`_ - DIRection de la Circulation Aérienne Militaire)
 * `France OACI Map`_ - Cartographie officielle OACI pour l'information aéronautique en France
 
-
-
-Licence
--------------------
-`Licence-GPL3`_
 
 
 Crédit
