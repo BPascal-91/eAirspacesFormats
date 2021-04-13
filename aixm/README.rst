@@ -35,15 +35,17 @@ Description
 
 Documentation
 -------------------
-.. image:: http://pascal.bazile.free.fr/htm/img/bpascal-co.jpg 
-	:target: http://pascal.bazile.free.fr/ 
-	:alt: ZZZ
-| I am text to the left  | .. image:: http://pascal.bazile.free.fr/htm/img/bpascal-co.jpg :target: http://pascal.bazile.free.fr/ :alt: ZZZ |
-[![aixm45](/res/aixm_v4.5.0.svg)](`AIXM v4.5`_)   [![aixm51](/res/aixm_v5.1.0.svg)](`AIXM v5.1`_)
-
-* `AIXM Standard`_ - Versions:
+* `AIXM Standard`_ - Versions:  |aixm45|  or  |aixm51|
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
+
+.. |aixm45| image:: res/aixm_v4.5.0.svg
+   :target: `AIXM v4.5`_
+   :alt: `AIXM`_ v4.5.0
+.. |aixm51| image:: res/aixm_v5.1.0.svg
+   :target: `AIXM v5.1`_
+   :alt: `AIXM`_ v5.1.0
+
 
 
 Official Data or Map
