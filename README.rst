@@ -54,8 +54,8 @@ Formatismes
    :target: `Openair`_
    :alt: `Openair`_ 
 
-	Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
-	Description complète -> `Openair`_
+Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
+Description complète -> `Openair`_
 
 
 `FAF`_ Format - `Flytec`_ Airspace Formatted
@@ -64,9 +64,9 @@ Formatismes
    :target: `FAF`_
    :alt: `FAF`_
 
-	Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
-	Description complète -> `FAF`_
-	*Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD.*
+Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
+Description complète -> `FAF`_
+*Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD.*
 
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
@@ -78,8 +78,8 @@ Formatismes
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
 
-	Format normalisé d'échange d'information aéronautiques ../..
-	Description complète -> `AIXM`_
+Format normalisé d'échange d'information aéronautiques ../..
+Description complète -> `AIXM`_
 
 
 `OFMX`_ Format - Open FlightMaps eXchange
@@ -88,23 +88,23 @@ Formatismes
    :target: `OFMX`_
    :alt: `OFMX`_ v?.?.?
 
-	OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
-	Description complète -> `OFMX`_
+OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
+Description complète -> `OFMX`_
 
 
 `GeoJSON`_ Format - GeoJSON Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Description complète -> `GeoJSON`_
+Description complète -> `GeoJSON`_
 
 
 `KML`_ Format - KML Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Description complète -> `KML`_
+Description complète -> `KML`_
 
    
 `XML`_ Format - XML Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Description complète -> `XML`_
+Description complète -> `XML`_
 
 
 
