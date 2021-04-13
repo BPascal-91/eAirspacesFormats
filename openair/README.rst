@@ -52,8 +52,11 @@ Crédit
 
 
 .. |imgOpenair1| image:: res/openair_v1.0.0.svg
-   :target: `Openair v1.0.0`_
+   :target: `Openair 1`_
    :alt: `OpenAir`_ 1.0.0
+.. |imgOpenair2| image:: res/openair_v1.0.1.svg
+   :target: `Openair 2`_
+   :alt: `OpenAir`_ v1.0.1
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_ beta
