@@ -1,14 +1,8 @@
+|imgAixm45|  |imgAixm51|
+
 `AIXM`_ Format - Aeronautical Information Exchange Modele
-===================
-.. image:: res/aixm_v4.5.0.svg
-   :target: `AIXM v4.5`_
-   :alt: `AIXM`_ v4.5.0
-.. image:: res/aixm_v5.1.0.svg
-   :target: `AIXM v5.1`_
-   :alt: `AIXM`_ v5.1.0
+=========================================================
 Format normalisé d'échange d'information aéronautiques ; défini et maintenu conjointement par l'Organisation Européenne pour la sécurité de la navigation aérienne (`Eurocontrol`_) et la Federal Aviation Administration (`FAA`_) des États-Unis.
-
-
 
 
 **Table of Contents**
@@ -19,7 +13,7 @@ Format normalisé d'échange d'information aéronautiques ; défini et maintenu 
 
 
 Description
--------------------
+-----------
 	The objective of the Aeronautical Information Exchange Model (AIXM) is to enable the provision in digital format of the aeronautical information that is in the scope of Aeronautical Information Services (AIS). The AIS information/data flows that are increasingly complex and made up of interconnected systems. They involve many actors including multiple suppliers and consumers. There is also a growing need in the global Air Traffic Management (ATM) system for high data quality and for cost efficiency.
 	../..
 	The following main information areas are in the scope of AIXM:
@@ -34,22 +28,14 @@ Description
 
 
 Documentation
--------------------
-* `AIXM Standard`_ - Versions:  |aixm45|  or  |aixm51|
+-------------
+* `AIXM Standard`_ - Versions:  |imgAixm45|  or  |imgAixm51|
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 
-.. |aixm45| image:: res/aixm_v4.5.0.svg
-   :target: `AIXM v4.5`_
-   :alt: `AIXM`_ v4.5.0
-.. |aixm51| image:: res/aixm_v5.1.0.svg
-   :target: `AIXM v5.1`_
-   :alt: `AIXM`_ v5.1.0
-
-
 
 Official Data or Map
--------------------
+--------------------
 * `OACI Abreviation`_ - Abréviations officielles OACI
 * `European AIS Database`_ - The single source of aeronautical information
 * `Eurocontrol (Data availability)`_ - (from `Eurocontrol`_ - A pan-European, civil-military organisation dedicated to supporting European aviation)
@@ -59,13 +45,19 @@ Official Data or Map
 * `France OACI Map`_ - Cartographie officielle OACI pour l'information aéronautique en France
 
 
-
 Crédit
 ------
 * `Pascal Bazile`_ main developer of `Paragliding OpenAir French Files`_
 
 
 
+
+.. |imgAixm45| image:: res/aixm_v4.5.0.svg
+   :target: `AIXM v4.5`_
+   :alt: `AIXM`_ v4.5.0
+.. |imgAixm51| image:: res/aixm_v5.1.0.svg
+   :target: `AIXM v5.1`_
+   :alt: `AIXM`_ v5.1.0
 
 .. _Pascal Bazile: https://github.com/BPascal-91/
 .. _Paragliding OpenAir French Files: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
