@@ -17,7 +17,7 @@ Format normalisé d'échange d'information aéronautiques.
 
 
 Description
------------
+-------------------
 	The objective of the Aeronautical Information Exchange Model (AIXM) is to enable the provision in digital format of the aeronautical information that is in the scope of Aeronautical Information Services (AIS). The AIS information/data flows that are increasingly complex and made up of interconnected systems. They involve many actors including multiple suppliers and consumers. There is also a growing need in the global Air Traffic Management (ATM) system for high data quality and for cost efficiency.
 	../..
 	The following main information areas are in the scope of AIXM:
@@ -32,19 +32,21 @@ Description
 
 
 Documentation
--------------
+-------------------
 * `AIXM Standard`_ - Version: `AIXM v4.5`_ ; `AIXM v5.1`_
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 
 
-Official Data
--------------
+Official Data or Map
+-------------------
 * `European AIS Database`_ - The single source of aeronautical information
 * `Eurocontrol (Data availability)`_ - (from `Eurocontrol`_ - A pan-European, civil-military organisation dedicated to supporting European aviation)
 * `AIXM Eurocontrol Confluence Invotory`_ - (or `AIXM Eurocontrol Confluence Invotory Map`_)
 * `France SIA-data`_ - Produits numériques en libre disposition (`France SIA`_ - Service de l'Information Aéronautique)
 * `France DIRCAM-data`_ - SUPAIP (via `France DIRCAM`_ - DIRection de la Circulation Aérienne Militaire)
+* `France OACI Map`_ - Cartographie officielle OACI pour l'information aéronautique en France
+* `OACI Abreviation`_ - Abréviation officielles OACI
 
 
 Crédit
@@ -62,19 +64,23 @@ Crédit
 .. _AIXM Standard: http://www.aixm.aero/
 .. _AIXM v4.5: https://www.aixm.aero/page/aixm-45
 .. _AIXM v5.1: https://www.aixm.aero/page/aixm-51-511
+
 .. _AIXM Eurocontrol Confluence Overview: https://ext.eurocontrol.int/aixm_confluence/display/GEN/Overview
 .. _AIXM Eurocontrol Confluence Invotory: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Inventory
 .. _AIXM Eurocontrol Confluence Invotory Map: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Overview
 .. _AIXM Eurocontrol Training Zone: https://trainingzone.eurocontrol.int/
-
 .. _Eurocontrol: https://www.eurocontrol.int/
 .. _European AIS Database: https://www.eurocontrol.int/service/european-ais-database
-.. _Eurocontrol (Static data): https://www.eurocontrol.int/service/static-data-operations
+.. _Eurocontrol (Data availability): https://www.eurocontrol.int/service/static-data-operations
 
+.. _France SIA: https://www.sia.aviation-civile.gouv.fr/
 .. _France SIA-data: https://www.sia.aviation-civile.gouv.fr/produits-numeriques-en-libre-disposition.html
+
 .. _France DIRCAM: https://www.dircam.dsae.defense.gouv.fr/
 .. _France DIRCAM-data: https://www.dircam.dsae.defense.gouv.fr/fr/documentation-4/supp
+
 .. _OACI (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/oaci
-.. _France Carte OACI: https://www.geoportail.gouv.fr/donnees/carte-oaci-vfr
+.. _OACI Abreviation: https://github.com/BPascal-91/eAirspacesFormats/tree/master/oaci/res/20100101_DEF_ABRV.pdf
+.. _France OACI Map: https://www.geoportail.gouv.fr/donnees/carte-oaci-vfr
 
 .. _Licence-GPL3: https://www.gnu.org/licenses/gpl-3.0.html
