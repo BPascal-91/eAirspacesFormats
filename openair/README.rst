@@ -31,15 +31,16 @@ Il est donc temps de faire évoluer ce format historique afin de répondre aux n
 Pour ce faire, plusieurs informations ont étés ajoutés dans le format OpenAir.
 Vous trouverez ci-dessous; la description historique du format 'Openair' ; complété des informations nouvellements ajoutées pour étendre ses capacités: 
 
-1. **AC Airspace Class** - Classification des zones aériennes
+1. **AC - Airspace Class** - Classification des zones aériennes
 	* |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=restricted, 'Q'=danger, 'GP'=Glider Prohibited, 'W'=Wave Window, 'Other'=Others classification]
 	* |imgOpenair101| Liste complétée ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM + référence]
 	* |imgOpenairBeta| Liste complétée ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
 	
-2. **AN Airspace Name** - Libellé de la zone aérienne
+2. **AN - Airspace Name** - Libellé de la zone aérienne
 	* |imgOpenair100| Texte libre, sans limitation de taille
 	* |imgOpenair101| Texte structuré ['NOTAM ref'=pour préciser la référence du NOTAM dans le cas d'une Class 'AC NOTAM']
-	* |imgOpenairBeta| Texte multi-structuré: AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]
+	* |imgOpenairBeta| Texte multi-structuré
+	.. code:: AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]
 		- 'Type' - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, ...]
 		- 'TypeMhz' - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
 		- 'CodeActivity' - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
