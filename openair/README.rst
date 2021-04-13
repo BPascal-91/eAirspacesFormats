@@ -70,4 +70,3 @@ Crédit
 .. _Openair 1.0.1: https://notaminfo.com/exporthelp#stdopenair
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
-.. _Licence-GPL3: https://www.gnu.org/licenses/gpl-3.0.html
