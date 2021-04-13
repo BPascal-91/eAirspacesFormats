@@ -18,7 +18,7 @@
    :alt: `OFMX`_ v?.?.?
 
 
-`eAirspacesFormats`_ - Electreonic Airspaces Formats
+# `eAirspacesFormats`_ - Electreonic Airspaces Formats
 ===================
 Présentation des formalismes électroniques utilisés pour la description des espaces-aériens et infrastructures positionnées au sol.
 
@@ -26,7 +26,7 @@ Ces formalismes sont ceux nécessaires pour la génération des cartographies pu
 Ces cartographies sont référencées sur la plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
 Vous pouvez également suivre les évolutions via la page de communication `Paragliding OpenAir French Files (on Facebook)`_.
 
-.. warning::
+.. code::
 
 	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
 	/!\ WARNING  : Only official data must be used for air navigation
@@ -39,7 +39,7 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
    :local:
 
 
-`Openair`_ Format - Open Airspace and terrain description language
+## `Openair`_ Format - Open Airspace and terrain description language
 -------------------
 .. image:: openair/res/openair_v1.0.0.svg
    :target: `Openair`_
@@ -51,7 +51,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 Description complète -> `Openair`_
 
 
-`FAF`_ Format - `Flytec`_ Airspace Formatted
+## `FAF`_ Format - `Flytec`_ Airspace Formatted
 -------------------
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
@@ -61,7 +61,7 @@ Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/C
 Description complète -> `FAF`_
 
 
-`AIXM`_ Format - Aeronautical Information Exchange Modele
+## `AIXM`_ Format - Aeronautical Information Exchange Modele
 -------------------
 .. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
@@ -73,7 +73,7 @@ Format normalisé d'échange d'information aéronautiques ../..
 Description complète -> `AIXM`_
 
 
-`OFMX`_ Format - Open FlightMaps eXchange
+## `OFMX`_ Format - Open FlightMaps eXchange
 -------------------
 .. image:: ofmx/res/ofmx_v-.-.-.svg
    :target: `OFMX`_
@@ -82,22 +82,22 @@ OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to valid
 Description complète -> `OFMX`_
 
 
-`GeoJSON`_ Format - GeoJSON Documentation
+## `GeoJSON`_ Format - GeoJSON Documentation
 -------------------
 Description complète -> `GeoJSON`_
 
 
-`KML`_ Format - KML Documentation
+## `KML`_ Format - KML Documentation
 -------------------
 Description complète -> `KML`_
 
    
-`XML`_ Format - XML Documentation
+## `XML`_ Format - XML Documentation
 -------------------
 Description complète -> `XML`_
 
 
-Official Data or Map
+## Official Data or Map
 -------------------
 * `OACI Abreviation`_ - Abréviations officielles OACI
 * `European AIS Database`_ - The single source of aeronautical information
@@ -109,12 +109,12 @@ Official Data or Map
 
 
 
-Licence
+## Licence
 -------------------
 `Licence-GPL3`_
 
 
-Crédit
+## Crédit
 -------------------
 * `Pascal Bazile`_ main initiator
 
