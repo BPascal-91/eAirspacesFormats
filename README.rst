@@ -53,8 +53,6 @@ Formatismes
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
    :alt: `Openair`_  
-.. code::
-
 	Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 	Description complète -> `Openair`_
 
@@ -64,8 +62,6 @@ Formatismes
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
-.. code::
-
 	Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
 	Description complète -> `FAF`_
 	*Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD.*
@@ -79,8 +75,6 @@ Formatismes
 .. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
-.. code::
-
 	Format normalisé d'échange d'information aéronautiques ../..
 	Description complète -> `AIXM`_
 
@@ -90,30 +84,22 @@ Formatismes
 .. image:: ofmx/res/ofmx_v-.-.-.svg
    :target: `OFMX`_
    :alt: `OFMX`_ v?.?.?
-.. code::
-
 	OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
 	Description complète -> `OFMX`_
 
 
 `GeoJSON`_ Format - GeoJSON Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. code::
-
 	Description complète -> `GeoJSON`_
 
 
 `KML`_ Format - KML Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. code::
-
 	Description complète -> `KML`_
 
    
 `XML`_ Format - XML Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. code::
-
 	Description complète -> `XML`_
 
 
