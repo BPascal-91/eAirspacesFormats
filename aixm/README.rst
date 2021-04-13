@@ -35,8 +35,8 @@ Description
 
 Documentation
 -------------------
-
-| I am text to the left  | image::http://pascal.bazile.free.fr/htm/img/bpascal-co.jpg :target:http://pascal.bazile.free.fr/ :alt:ZZZ|
+.. image:: http://pascal.bazile.free.fr/htm/img/bpascal-co.jpg :target: http://pascal.bazile.free.fr/ :alt: ZZZ
+| I am text to the left  | .. image:: http://pascal.bazile.free.fr/htm/img/bpascal-co.jpg :target: http://pascal.bazile.free.fr/ :alt: ZZZ |
 [![aixm45](/res/aixm_v4.5.0.svg)](`AIXM v4.5`_)   [![aixm51](/res/aixm_v5.1.0.svg)](`AIXM v5.1`_)
 
 * `AIXM Standard`_ - Versions:
