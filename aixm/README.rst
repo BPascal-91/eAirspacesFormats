@@ -1,12 +1,14 @@
 `AIXM`_ Format - Aeronautical Information Exchange Modele
 ===================
 .. image:: res/aixm_v4.5.0.svg
-   :target: `AIXM`_
+   :target: `AIXM v4.5`_
    :alt: `AIXM`_ v4.5.0
 .. image:: res/aixm_v5.1.0.svg
-   :target: `AIXM`_
+   :target: `AIXM v5.1`_
    :alt: `AIXM`_ v5.1.0
 Format normalisé d'échange d'information aéronautiques ; défini et maintenu conjointement par l'Organisation Européenne pour la sécurité de la navigation aérienne (`Eurocontrol`_) et la Federal Aviation Administration (`FAA`_) des États-Unis.
+
+
 
 
 **Table of Contents**
@@ -28,12 +30,12 @@ Description
 		* Procedures
 		* Routes
 		* Flying restrictions
-	../.. `AIXM Standard`_ is maintained jointly by the European Organisation for the Safety of Air Navigation  (`Eurocontrol`_) and Federal Aviation Administration (`FAA`_) of United States
+	../.. `AIXM Standard`_ is maintained jointly by the European Organisation for the Safety of Air Navigation  (`Eurocontrol`_) and Federal Aviation Administration (`FAA`_) of United States.
 
 
 Documentation
 -------------------
-* `AIXM Standard`_ - Version: `AIXM v4.5`_ ; `AIXM v5.1`_
+* `AIXM Standard`_ - Versions: [![45](res/aixm_v4.5.0.svg)](`AIXM v4.5`_) [![51](res/aixm_v5.1.0.svg)](`AIXM v5.1`_)
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 
