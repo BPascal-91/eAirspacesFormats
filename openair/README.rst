@@ -40,7 +40,10 @@ Vous trouverez ci-dessous; la description historique du format 'Openair' ; compl
 	* |imgOpenair100| Texte libre, sans limitation de taille
 	* |imgOpenair101| Texte structuré ['NOTAM ref'=pour préciser la référence du NOTAM dans le cas d'une Class 'AC NOTAM']
 	* |imgOpenairBeta| Texte multi-structuré
-.. code::AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]::
+.. code::
+
+	AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]
+	
 		- 'Type' - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, ...]
 		- 'TypeMhz' - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
 		- 'CodeActivity' - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
