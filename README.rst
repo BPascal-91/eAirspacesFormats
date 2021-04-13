@@ -49,9 +49,9 @@ Format normalisé d'échange d'information aéronautiques ../..
 Description complète -> `AIXM`_
 
 
-`OFMX`_ Format - Open FlightMaps eXchange |imgOfmx00|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
+`OFMX`_ Format - Open FlightMaps eXchange
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|imgOfmx00| OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
 Description complète -> `OFMX`_
 
 

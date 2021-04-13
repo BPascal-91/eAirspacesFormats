@@ -29,7 +29,7 @@ Description
 
 Documentation
 -------------
-* `AIXM Standard`_ - Versions:  |imgAixm45|  or  |imgAixm51|
+* `AIXM Standard`_ - Versions: |imgAixm45| or |imgAixm51|
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 
