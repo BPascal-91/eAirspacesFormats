@@ -18,7 +18,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 Documentation
 -------------
-`Openair 1`_ - Version initiale |imgOpenair1| ; puis une première extension `Openair 2`_
+`Openair 1`_ - Version initiale |imgOpenair1| ; puis une première extension |imgOpenair2|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Openair Extended** - Version étandue |imgOpenairBeta|
