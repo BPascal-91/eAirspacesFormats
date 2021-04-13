@@ -79,7 +79,7 @@ Description complète -> `AIXM`_
    :target: `OFMX`_
    :alt: `OFMX`_ v?.?.?
 OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
-Description complète -> `OFMX Documentation`_
+Description complète -> `OFMX`_
 
 
 `GeoJSON`_ Format - GeoJSON Documentation
