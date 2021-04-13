@@ -35,7 +35,9 @@ Description
 
 Documentation
 -------------------
- [![aixm45](/res/aixm_v4.5.0.svg)](`AIXM v4.5`_)   [![aixm51](/res/aixm_v5.1.0.svg)](`AIXM v5.1`_)
+
+| I am text to the left  | ![Test](http://pascal.bazile.free.fr/htm/img/bpascal-co.jpg) |
+[![aixm45](/res/aixm_v4.5.0.svg)](`AIXM v4.5`_)   [![aixm51](/res/aixm_v5.1.0.svg)](`AIXM v5.1`_)
 
 * `AIXM Standard`_ - Versions:
 * `AIXM Eurocontrol Confluence Overview`_
