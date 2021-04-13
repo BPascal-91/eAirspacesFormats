@@ -33,9 +33,9 @@ Description
 
 Documentation
 -------------
-* `AIXM Standard_`
+* `AIXM Standard`_
 * `AIXM v4.5`_
-* 'AIXM v5.1`_
+* `AIXM v5.1`_
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 

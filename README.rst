@@ -82,9 +82,9 @@ OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to valid
 Description complète -> `OFMX Documentation`_
 
 
-`_GeoJSON`_ Format - GeoJSON Documentation
+`GeoJSON`_ Format - GeoJSON Documentation
 -------------------
-Description complète -> `_GeoJSON`_
+Description complète -> `GeoJSON`_
 
 
 `KML`_ Format - KML Documentation
