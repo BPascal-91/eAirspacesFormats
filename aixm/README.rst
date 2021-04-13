@@ -64,7 +64,7 @@ Crédit
 .. _AIXM v5.1: https://www.aixm.aero/page/aixm-51-511
 .. _AIXM Eurocontrol Confluence Overview: https://ext.eurocontrol.int/aixm_confluence/display/GEN/Overview
 .. _AIXM Eurocontrol Confluence Invotory: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Inventory
-.. _AIXM Eurocontrol Confluence Invotory Map: hhttps://ext.eurocontrol.int/aixm_confluence/display/AIX/Overview
+.. _AIXM Eurocontrol Confluence Invotory Map: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Overview
 .. _AIXM Eurocontrol Training Zone: https://trainingzone.eurocontrol.int/
 
 .. _Eurocontrol: https://www.eurocontrol.int/
