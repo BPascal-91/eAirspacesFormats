@@ -39,8 +39,12 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
    :local:
 
 
+Formatismes
+-----------
+
+
 `Openair`_ Format - Open Airspace and terrain description language
-------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: openair/res/openair_v1.0.0.svg
    :target: `Openair`_
    :alt: `Openair`_
@@ -52,7 +56,7 @@ Description complète -> `Openair`_
 
 
 `FAF`_ Format - `Flytec`_ Airspace Formatted
---------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
@@ -62,7 +66,7 @@ Description complète -> `FAF`_
 
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: aixm/res/aixm_v4.5.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v4.5.0
@@ -74,7 +78,7 @@ Description complète -> `AIXM`_
 
 
 `OFMX`_ Format - Open FlightMaps eXchange
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: ofmx/res/ofmx_v-.-.-.svg
    :target: `OFMX`_
    :alt: `OFMX`_ v?.?.?
@@ -83,18 +87,22 @@ Description complète -> `OFMX`_
 
 
 `GeoJSON`_ Format - GeoJSON Documentation
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Description complète -> `GeoJSON`_
 
 
 `KML`_ Format - KML Documentation
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Description complète -> `KML`_
 
    
 `XML`_ Format - XML Documentation
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Description complète -> `XML`_
+
+
+
+--------------------
 
 
 Official Data or Map
@@ -109,12 +117,12 @@ Official Data or Map
 
 
 
-## Licence
+Licence
 -------------------
 `Licence-GPL3`_
 
 
-## Crédit
+Crédit
 ---------
 * `Pascal Bazile`_ main initiator
 
