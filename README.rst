@@ -26,7 +26,7 @@ Ces formalismes sont ceux nécessaires pour la génération des cartographies pu
 Ces cartographies sont référencées sur la plateforme OpenData Française - `Paragliding OpenAir French Files (on OpenData)`_.
 Vous pouvez également suivre les évolutions via la page de communication `Paragliding OpenAir French Files (on Facebook)`_.
 
-.. code::
+.. warning::
 
 	/!\ ATTENTION: Seules des données officielles doivent êtres utilisées pour la navigation aérienne.
 	/!\ WARNING  : Only official data must be used for air navigation
