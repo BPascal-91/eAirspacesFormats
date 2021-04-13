@@ -39,11 +39,13 @@ Vous pouvez également suivre les évolutions via la page de communication `Para
    :local:
 
 
+--------------------
+
+
 Formatismes
 -----------
 
-
-`Openair`_ Format - Open Airspace and terrain description language
+* `Openair`_ Format - Open Airspace and terrain description language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: openair/res/openair_v1.0.0.svg
    :target: `Openair`_
@@ -55,7 +57,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 Description complète -> `Openair`_
 
 
-`FAF`_ Format - `Flytec`_ Airspace Formatted
+* `FAF`_ Format - `Flytec`_ Airspace Formatted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
