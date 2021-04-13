@@ -1,22 +1,4 @@
-.. image:: openair/res/openair_v1.0.0.svg
-   :target: `OpenAir`_
-   :alt: `OpenAir`_
-.. image:: openair/res/openair_betaVersion.svg
-   :target: `Openair`_
-   :alt: `Openair`_
-.. image:: faf/res/faf_v1.0.0.svg
-   :target: `FAF`_
-   :alt: `FAF`_
-.. image:: aixm/res/aixm_v4.5.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v4.5.0
-.. image:: aixm/res/aixm_v5.1.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v5.1.0
-.. image:: ofmx/res/ofmx_v-.-.-.svg
-   :target: `OFMX`_
-   :alt: `OFMX`_ v?.?.?
-
+|imgOpenair10| |imgOpenairBeta| |imgFaf10| |imgAixm45| |imgAixm51| |imgOfmx00|
 
 `eAirspacesFormats`_ - Electreonic Airspaces Formats
 ====================================================
@@ -47,23 +29,14 @@ Formatismes
 
 `Openair`_ Format - Open Airspace and terrain description language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. image:: openair/res/openair_v1.0.0.svg
-   :target: `Openair`_
-   :alt: `Openair`_
-.. image:: openair/res/openair_betaVersion.svg
-   :target: `Openair`_
-   :alt: `Openair`_ 
-
+|imgOpenair10| |imgOpenairBeta|
 Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 Description complète -> `Openair`_
 
 
 `FAF`_ Format - `Flytec`_ Airspace Formatted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. image:: faf/res/faf_v1.0.0.svg
-   :target: `FAF`_
-   :alt: `FAF`_
-
+|imgFaf10|
 Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
 Description complète -> `FAF`_
 *Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD.*
@@ -71,23 +44,13 @@ Description complète -> `FAF`_
 
 `AIXM`_ Format - Aeronautical Information Exchange Modele
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. image:: aixm/res/aixm_v4.5.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v4.5.0
-.. image:: aixm/res/aixm_v5.1.0.svg
-   :target: `AIXM`_
-   :alt: `AIXM`_ v5.1.0
-
+|imgAixm45| |imgAixm51|
 Format normalisé d'échange d'information aéronautiques ../..
 Description complète -> `AIXM`_
 
 
-`OFMX`_ Format - Open FlightMaps eXchange
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. image:: ofmx/res/ofmx_v-.-.-.svg
-   :target: `OFMX`_
-   :alt: `OFMX`_ v?.?.?
-
+`OFMX`_ Format - Open FlightMaps eXchange |imgOfmx00|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
 Description complète -> `OFMX`_
 
@@ -128,6 +91,25 @@ Crédit
 * `Pascal Bazile`_ main initiator
 
 
+
+.. |imgOpenair10| image:: openair/res/openair_v1.0.0.svg
+   :target: `OpenAir`_
+   :alt: `OpenAir`_
+.. |imgOpenairBeta| image:: openair/res/openair_betaVersion.svg
+   :target: `Openair`_
+   :alt: `Openair`_
+.. |imgFaf10| image:: faf/res/faf_v1.0.0.svg
+   :target: `FAF`_
+   :alt: `FAF`_
+.. |imgAixm45| image:: aixm/res/aixm_v4.5.0.svg
+   :target: `AIXM`_
+   :alt: `AIXM`_ v4.5.0
+.. |imgAixm51| image:: aixm/res/aixm_v5.1.0.svg
+   :target: `AIXM`_
+   :alt: `AIXM`_ v5.1.0
+.. |imgOfmx00| image:: ofmx/res/ofmx_v-.-.-.svg
+   :target: `OFMX`_
+   :alt: `OFMX`_ v?.?.?
 
 
 .. _Pascal Bazile: https://github.com/BPascal-91/
