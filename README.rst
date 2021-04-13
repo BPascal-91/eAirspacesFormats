@@ -99,13 +99,13 @@ Description complète -> `XML`_
 
 Official Data or Map
 -------------------
+* `OACI Abreviation`_ - Abréviations officielles OACI
 * `European AIS Database`_ - The single source of aeronautical information
 * `Eurocontrol (Data availability)`_ - (from `Eurocontrol`_ - A pan-European, civil-military organisation dedicated to supporting European aviation)
 * `AIXM Eurocontrol Confluence Invotory`_ - (or `AIXM Eurocontrol Confluence Invotory Map`_)
 * `France SIA-data`_ - Produits numériques en libre disposition (`France SIA`_ - Service de l'Information Aéronautique)
 * `France DIRCAM-data`_ - SUPAIP (via `France DIRCAM`_ - DIRection de la Circulation Aérienne Militaire)
 * `France OACI Map`_ - Cartographie officielle OACI pour l'information aéronautique en France
-* `OACI Abreviation`_ - Abréviation officielles OACI
 
 
 
@@ -142,6 +142,8 @@ Crédit
 .. _AIXM: `AIXM (on GitHub)`_
 .. _AIXM (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/aixm/#readme
 .. _AIXM Standard: http://www.aixm.aero/
+.. _AIXM Eurocontrol Confluence Invotory: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Inventory
+.. _AIXM Eurocontrol Confluence Invotory Map: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Overview
 
 .. _OFMX: https://gitlab.com/openflightmaps/ofmx/-/wikis/home
 .. _GeoJSON: http://geojson.org/
