@@ -35,7 +35,7 @@ Description
 
 Documentation
 -------------------
-* `AIXM Standard`_ - Versions: [![45](res/aixm_v4.5.0.svg)](`AIXM v4.5`_) [![51](res/aixm_v5.1.0.svg)](`AIXM v5.1`_)
+* `AIXM Standard`_ - Versions: [![45](res/aixm_v4.5.0.svg)](`AIXM v4.5`_)] [![51](res/aixm_v5.1.0.svg)](`AIXM v5.1`_)]
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 
