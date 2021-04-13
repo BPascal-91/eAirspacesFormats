@@ -6,7 +6,7 @@
 .. image:: res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
-Format normalisé d'échange d'information aéronautiques.
+Format normalisé d'échange d'information aéronautiques ; défini et maintenu conjointement par l'Organisation Européenne pour la sécurité de la navigation aérienne (`Eurocontrol`_) et la Federal Aviation Administration (`FAA`_) des États-Unis.
 
 
 **Table of Contents**
@@ -28,7 +28,7 @@ Description
 		* Procedures
 		* Routes
 		* Flying restrictions
-	../.. `AIXM Standard`_
+	../.. `AIXM Standard`_ is maintained jointly by the European Organisation for the Safety of Air Navigation  (`Eurocontrol`_) and Federal Aviation Administration (`FAA`_) of United States
 
 
 Documentation
@@ -70,6 +70,7 @@ Crédit
 .. _AIXM Eurocontrol Confluence Invotory: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Inventory
 .. _AIXM Eurocontrol Confluence Invotory Map: https://ext.eurocontrol.int/aixm_confluence/display/AIX/Overview
 .. _AIXM Eurocontrol Training Zone: https://trainingzone.eurocontrol.int/
+.. _FAA: https://www.faa.gov/
 .. _Eurocontrol: https://www.eurocontrol.int/
 .. _European AIS Database: https://www.eurocontrol.int/service/european-ais-database
 .. _Eurocontrol (Data availability): https://www.eurocontrol.int/service/static-data-operations
