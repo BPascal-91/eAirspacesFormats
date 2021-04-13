@@ -52,7 +52,8 @@ Formatismes
    :alt: `Openair`_
 .. image:: openair/res/openair_betaVersion.svg
    :target: `Openair`_
-   :alt: `Openair`_  
+   :alt: `Openair`_ 
+
 	Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 	Description complète -> `Openair`_
 
@@ -62,6 +63,7 @@ Formatismes
 .. image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
+
 	Un format pour l'encodage de données aéronautiques définit par l'éditeur `Flytec`_ ; utilisable pour appareils Flytec ou Brauniger.
 	Description complète -> `FAF`_
 	*Nota. Le fichier FAF doit généralement être copié dans le dossier 'CarteSD/CTR' de la carte SD.*
@@ -75,6 +77,7 @@ Formatismes
 .. image:: aixm/res/aixm_v5.1.0.svg
    :target: `AIXM`_
    :alt: `AIXM`_ v5.1.0
+
 	Format normalisé d'échange d'information aéronautiques ../..
 	Description complète -> `AIXM`_
 
@@ -84,6 +87,7 @@ Formatismes
 .. image:: ofmx/res/ofmx_v-.-.-.svg
    :target: `OFMX`_
    :alt: `OFMX`_ v?.?.?
+
 	OFMX (Open FlightMaps eXchange) is a suite of well-defined data formats to validate and exchange aeronautical data with open flightmaps (OFM).
 	Description complète -> `OFMX`_
 
