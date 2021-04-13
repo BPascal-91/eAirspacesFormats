@@ -18,7 +18,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 Documentation
 -------------
-`Openair 1.0.0`_ - Version initiale |imgOpenair1| ; puis une première extension `Openair 1.0.1`_
+`Openair 1`_ - Version initiale |imgOpenair1| ; puis une première extension `Openair 2`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Openair Extended** - Version étandue |imgOpenairBeta|
@@ -55,7 +55,7 @@ Crédit
    :target: `Openair v1.0.0`_
    :alt: `OpenAir`_ 1.0.0
 .. |imgOpenair2| image:: res/openair_v1.0.1.svg
-   :target: `Openair 1.0.1`_
+   :target: `Openair 2`_
    :alt: `OpenAir`_ v1.0.1
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
    :target: `Openair`_
@@ -66,7 +66,7 @@ Crédit
 
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
-.. _Openair 1.0.0: http://www.winpilot.com/UsersGuide/UserAirspace.asp
-.. _Openair 1.0.1: https://notaminfo.com/exporthelp#stdopenair
+.. _Openair 1: http://www.winpilot.com/UsersGuide/UserAirspace.asp
+.. _Openair 2: https://notaminfo.com/exporthelp#stdopenair
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
