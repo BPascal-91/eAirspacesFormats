@@ -18,7 +18,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 Documentation
 -------------
-`Openair 100`_ - Version initiale |imgOpenair100| ; puis une première extension |imgOpenair101|
+`Openair Standard`_ - Version initiale |imgOpenair100| ; puis une première extension |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Openair Extended`_ - Version étandue |imgOpenairBeta|
@@ -31,14 +31,16 @@ Il est donc temps de faire évoluer ce format historique afin de répondre aux n
 Pour ce faire, plusieurs informations ont étés ajoutés dans le format OpenAir.
 Vous trouverez ci-dessous; la description historique du format 'Openair' ; complété des informations nouvellements ajoutées pour étendre ses capacités: 
 
-1. **AC** Airspace Class - Classification des zones aériennes
+1. **AC Airspace Class** - Classification des zones aériennes
 	* |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=restricted, 'Q'=danger, 'GP'=Glider Prohibited, 'W'=Wave Window, 'Other'=Others classification]
-	* |imgOpenair101| Complété par ['NOTAM'=NOTAM information]
-	* |imgOpenairBeta| Complété par ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
+	* |imgOpenair101| Liste complétée ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM + référence]
+	* |imgOpenairBeta| Liste complétée ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
 	
-2. **AN** Airspace Class - Classification des zones aériennes
-
-
+2. **AN Airspace Name** - Libellé de la zone aérienne
+	* |imgOpenair100| Texte libre, sans limitation de taille
+	* |imgOpenair101| Texte structuré ['NOTAM ref'=pour préciser la référence du NOTAM dans le cas d'une Class 'AC NOTAM']
+	* |imgOpenairBeta| Texte multi-structuré
+		
 
 Official Data or Map
 --------------------
@@ -52,7 +54,7 @@ Crédit
 
 
 .. |imgOpenair100| image:: res/openair_v1.0.0.svg
-   :target: `Openair 100`_
+   :target: `Openair Standard`_
    :alt: `OpenAir`_ 1.0.0
 .. |imgOpenair101| image:: res/openair_v1.0.1.svg
    :target: `Openair 101`_
@@ -67,7 +69,7 @@ Crédit
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
 .. _Openair Extended: https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#openair-extended
-.. _Openair 100: http://www.winpilot.com/UsersGuide/UserAirspace.asp
+.. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
 .. _Openair 101: https://notaminfo.com/exporthelp#stdopenair
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
