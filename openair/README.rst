@@ -1,4 +1,4 @@
-|imgOpenair1| |imgOpenair2| |imgOpenairBeta|
+|imgOpenair100| |imgOpenair101| |imgOpenairBeta|
 
 `Openair`_ Format - Open Airspace and terrain description language
 ===================
@@ -18,11 +18,11 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 Documentation
 -------------
-`Openair 1`_ - Version initiale |imgOpenair1| ; puis une première extension |imgOpenair2|
+`Openair 100`_ - Version initiale |imgOpenair100| ; puis une première extension |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Openair Extended** - Version étandue |imgOpenairBeta|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Openair Extended`_ - Version étandue |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Le format **OpenAir** a pris naissance dans les années 1990. Depuis 30 ans maintenant, ce langage perdure car il est encore utilisé par de nombreux outils cartographique ou appreils de géolocalisation de type GPS.
 De nos jours; le besoin des pilotes a évolué. L'information aéronautique est maintenant digitalisée et les capcités informatique mis a disposition des pilotes n'a cessé de progresser.
@@ -32,8 +32,8 @@ Pour ce faire, plusieurs informations ont étés ajoutés dans le format OpenAir
 Vous trouverez ci-dessous; la description historique du format 'Openair' ; complété des informations nouvellements ajoutées pour étendre ses capacités: 
 
 1. **AC** Airspace Class - Classification des zones aériennes
-	* |imgOpenair1| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=restricted, 'Q'=danger, 'GP'=Glider Prohibited, 'W'=Wave Window, 'Other'=Others classification]
-	* |imgOpenair2| Complété par ['NOTAM'=NOTAM information]
+	* |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=restricted, 'Q'=danger, 'GP'=Glider Prohibited, 'W'=Wave Window, 'Other'=Others classification]
+	* |imgOpenair101| Complété par ['NOTAM'=NOTAM information]
 	* |imgOpenairBeta| Complété par ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
 	
 2. **AN** Airspace Class - Classification des zones aériennes
@@ -51,11 +51,11 @@ Crédit
 
 
 
-.. |imgOpenair1| image:: res/openair_v1.0.0.svg
-   :target: `Openair 1`_
+.. |imgOpenair100| image:: res/openair_v1.0.0.svg
+   :target: `Openair 100`_
    :alt: `OpenAir`_ 1.0.0
-.. |imgOpenair2| image:: res/openair_v1.0.1.svg
-   :target: `Openair 2`_
+.. |imgOpenair101| image:: res/openair_v1.0.1.svg
+   :target: `Openair 101`_
    :alt: `OpenAir`_ v1.0.1
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
    :target: `Openair`_
@@ -66,7 +66,8 @@ Crédit
 
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
-.. _Openair 1: http://www.winpilot.com/UsersGuide/UserAirspace.asp
-.. _Openair 2: https://notaminfo.com/exporthelp#stdopenair
+.. _Openair Extended: https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#openair-extended
+.. _Openair 100: http://www.winpilot.com/UsersGuide/UserAirspace.asp
+.. _Openair 101: https://notaminfo.com/exporthelp#stdopenair
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
