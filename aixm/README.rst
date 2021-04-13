@@ -33,20 +33,18 @@ Description
 
 Documentation
 -------------
-* `AIXM Standard`_
-* `AIXM v4.5`_
-* `AIXM v5.1`_
+* `AIXM Standard`_ - Version: `AIXM v4.5`_ ; `AIXM v5.1`_
 * `AIXM Eurocontrol Confluence Overview`_
 * `AIXM Eurocontrol Training Zone`_
 
 
 Official Data
 -------------
-* `European AIS Database'_ - The single source of aeronautical information
-* `Eurocontrol (Static data availability)`_ - Disponibilité des données statiques (`Eurocontrol`_ - A pan-European, civil-military organisation dedicated to supporting European aviation)
-* `AIXM Eurocontrol Confluence Invotory`_  --or-- `AIXM Eurocontrol Confluence Invotory Map`_
+* `European AIS Database`_ - The single source of aeronautical information
+* `Eurocontrol (Data availability)`_ - (from `Eurocontrol`_ - A pan-European, civil-military organisation dedicated to supporting European aviation)
+* `AIXM Eurocontrol Confluence Invotory`_ - (or `AIXM Eurocontrol Confluence Invotory Map`_)
 * `France SIA-data`_ - Produits numériques en libre disposition (`France SIA`_ - Service de l'Information Aéronautique)
-* `France DIRCAM-data`_ - SUPAIP (`France DIRCAM`_ - DIRection de la Circulation Aérienne Militaire)
+* `France DIRCAM-data`_ - SUPAIP (via `France DIRCAM`_ - DIRection de la Circulation Aérienne Militaire)
 
 
 Crédit
