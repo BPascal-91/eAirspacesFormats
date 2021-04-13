@@ -1,4 +1,4 @@
-|imgOpenair10| |imgOpenairBeta| 
+|imgOpenair10| |imgOpenairBeta|
 
 `Openair`_ Format - Open Airspace and terrain description language
 ===================
@@ -19,7 +19,7 @@ Un format ouvert pour l'encodage de données aéronautiques ; basé sur un forma
 
 Documentation
 -------------
-* `AIXM Standard`_ - Version: |imgOpenair10| |imgOpenairBeta| 
+* `Openair Standard`_ - Version: |imgOpenair10|
 
 
 
@@ -35,7 +35,7 @@ Crédit
 
 
 .. |imgOpenair10| image:: res/openair_v1.0.0.svg
-   :target: `OpenAir`_
+   :target: `Openair Standard`_
    :alt: `OpenAir`_
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
    :target: `Openair`_
