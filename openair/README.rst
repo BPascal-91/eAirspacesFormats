@@ -138,7 +138,7 @@ Documentation
 * **AC - Airspace Class** - Classification des zones aériennes
 	1. |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=Restricted, 'Q'=danger, 'GP'=Glider-Prohibited, 'W'=Wave-Window, <Others>=Autres-classification]
 	2. |imgOpenair101| Liste complétée par ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM-référence]
-	3. |imgOpenairBeta| Liste complétée par ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
+	3. |imgOpenairBeta| Liste complétée par ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole-for-PARAGLIDER, 'FFVP'=FFVP-Protocole-for-GLIDER, 'SIV'=Service-d'Information-en-Vol, "RAS"=Regulated-AirSpace, 'ADIZ'=Air-Defense-Identification-Zone, 'AMA'=Minimum-Altitude-Area, 'PART'=PART-of-airspace, 'FIR'=Flight-Information-Region, 'UIR'=Upper-Flight-Information-Region, "OCA"=Oceanic-Control-Area, 'POLITICAL'=Political-administrative-area, "NO-FIR"=Airspace-for-which-not-even-an-FIR-is-defined]
 
 * **AN - Airspace Name** - Libellé de la zone aérienne
 	1. |imgOpenair100| Texte libre, sans limitation de taille [mais limité à 16 caractères pour un export sous (Flytec)FAF-format]
@@ -166,7 +166,7 @@ Documentation
 
 	3. |imgOpenairBeta| Texte libre, ou multi-structuré:
 		**AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]**
-			- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole]
+			- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'TRA'=Temporary-Reserved-Area, 'TSA'=Temporary-Segregated-Area, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'PROTECT'=Airspace-protected-from-specific-air-traffic, 'NATURE'=Natural-reserve, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole, 'SPORT'=Aerial-sporting, 'TRPLA'=Treuil-Planeurs, 'TRVL'=Treuil-Vol-Libre, 'PJE'=Parachute-Jumping-Exercise, 'BAL'('BALLOON','BALLOONING')=hot-air-BALloons, 'AER'Radio-controlled-model-flying, 'PRN'=Police-rescue-activity-or-nature-reserve-management-operations, 'ATZ'=Aerodrome-Traffic-Zone, 'AWY'=Airway, 'FIS'=Flight-Information-Service, 'UTA'=Upper-Control-Area]
 			- **'TypeMhz'** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
 			- **'CodeActivity'** - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARAGLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
 			- **'SeeNOTAM'** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
@@ -185,7 +185,7 @@ Documentation
 			- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
-	* |imgOpenair100| ../..
+	* |imgOpenairBeta| ../..
 
 
 
