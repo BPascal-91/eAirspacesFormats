@@ -242,7 +242,6 @@ Crédit
 .. _Openair: `Openair (on GitHub)`_
 .. _Openair Extended: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
-.. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
 .. _Openair v1.0.1: https://notaminfo.com/exporthelp#stdopenair
-.. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
+.. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
 
