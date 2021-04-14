@@ -249,10 +249,12 @@ Crédit
 .. |imgLFLB1-doubleRefAltiUpper| image:: res/LFLB1_double-ref-alti_upper.jpg
 	:height: 100
 	:width: 200
+	:scale: 50
 	:alt: Double Ref. Alti. (Upper)
 .. |imgLFR210-doubleRefAltiUpper| image:: res/LFR210_double-ref-alti_upper.jpg
 	:height: 100
 	:width: 200
+	:scale: 50
 	:alt: Double Ref. Alti. (Upper)
 
 .. _Pascal Bazile: https://github.com/BPascal-91/
