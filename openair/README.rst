@@ -211,8 +211,19 @@ Documentation
 			- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
-	* |imgOpenairBeta| ../..
-
+	* |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
+	Présentation officielle OACI: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
+		.. code::
+		
+			*** Exemple concret
+			AC R
+			AN R 210 Upper(2100FT AMSL-1400FT AGL)
+			*AAlt ["SFC/2100FT AMSL-1400FT AGL", "0m/640m"]
+			AH 2100FT AMSL
+			*AH2 1400FT AGL
+			AL SFC
+			V X=49:37:0N 4:34:50E
+			DC 0.81
 
 
 Official Data or Map
@@ -227,14 +238,20 @@ Crédit
 
 
 .. |imgOpenair100| image:: res/openair_v1.0.0.svg
-   :target: `Openair Standard`_
-   :alt: `OpenAir`_ 1.0.0
+	:target: `Openair Standard`_
+	:alt: `OpenAir`_ 1.0.0
 .. |imgOpenair101| image:: res/openair_v1.0.1.svg
-   :target: `Openair v1.0.1`_
-   :alt: `OpenAir`_ v1.0.1
+	:target: `Openair v1.0.1`_
+	:alt: `OpenAir`_ v1.0.1
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
-   :target: `Openair`_
-   :alt: `Openair`_ beta
+	:target: `Openair`_
+	:alt: `Openair`_ beta
+.. |imgLFLB1-doubleRefAltiUpper| image:: res/LFLB1_double-ref-alti_upper.jpg
+	:height: 100
+	:alt: Double Ref. Alti. (Upper)
+.. |imgLFR210-doubleRefAltiUpper| image:: res/LFR210_double-ref-alti_upper.jpg
+	:height: 100
+	:alt: Double Ref. Alti. (Upper)
 
 .. _Pascal Bazile: https://github.com/BPascal-91/
 .. _Paragliding OpenAir French Files: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
