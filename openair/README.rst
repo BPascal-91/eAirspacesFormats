@@ -24,13 +24,13 @@ Depuis septembre 2019 ; `Pascal Bazile`_ s'attache à compléter se formalisme p
 Vous trouverez ci-dessous ; l'historique des évolutions ainsi que la description détaillée de ce formalisme `Openair`_
 
 
-Exemples de contenus en version initiale |imgOpenair100|
+Exemples de contenus dans la version initiale |imgOpenair100|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	.. code::
 	
 		*** Tracé d'un rectangle, coordonnées précisées avec une taille-fixe
 		AC D
-		AN TMA ORLEANS 5.1
+		AN ORLEANS 5.1
 		AH FL065
 		AL 3500FT AMSL
 		DP 47:52:20 N 002:01:57 E
@@ -41,15 +41,23 @@ Exemples de contenus en version initiale |imgOpenair100|
 
 		*** Tracé d'un cercle, coordonnées précisées avec une taille-fixe
 		AC P
-		AN ZIT Luxeuil
+		AN Luxeuil
 		AH 500FT AGL
 		AL SFC
 		V X=47:47:20 N 006:21:20 E
 		DC 1.1
 
+		*** Autre cercle (ici uniquement présenté pour démontrer les évolutions de formalisme précisées plus bas...)
+		AC R
+		AN 210
+		AH 2100FT AMSL
+		AL SFC
+		V X=49:37:00 N 004:34:50 E
+		DC 0.81
+
 		*** Tracé contenant Arc-horaire et Arc-AntiHoraire, coordonnées précisées avec une taille-fixe
 		AC D
-		AN TMA MONTPELLIER 2
+		AN MONTPELLIER 2
 		AH FL145
 		AL 2000FT AMSL
 		DP 43:29:20 N 003:50:39 E
@@ -66,8 +74,8 @@ Exemples de contenus en version initiale |imgOpenair100|
 		DB 43:40:10 N 004:06:40 E, 43:29:20 N 003:50:39 E
 		DP 43:29:20 N 003:50:39 E
 
-Exemples de contenus dans la nouvelle version |imgOpenairBeta|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exemples des mêmes contenus dans la nouvelle version |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	.. code::
 	
 		*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
@@ -100,7 +108,24 @@ Exemples de contenus dans la nouvelle version |imgOpenairBeta|
 		V X=47:47:20N 6:21:20E
 		DC 1.1
 
-		*** Tracé contenant Arc-horaire et Arc-AntiHoraire, taille des coordonnées optimisée + ajout des nouvelles informations
+		*** Autre cercle, avec précision d'une double référence altimétrique (ici un double Plafond) + précision de la non-activation les: Samedis/SATerday, Dimanches/SUNday et JoursFériés/HOLiday
+		AC R
+		AN R 210 Upper(2100FT AMSL-1400FT AGL)
+		*AAlt ["SFC/2100FT AMSL-1400FT AGL", "0m/640m"]
+		*AUID GUId=LFR210 UId=1564645 Id=LFR210
+		*ADescr GAT IFR and VFR, OAT: avoidance mandatory Administrator: 3ème régiment de génie: 03 24 41 34 33 or 34 12.
+		*AActiv [TIMSH] MON-FRI except HOL: Possible activation from SR- 30 to SS+30
+		*ATimes {"1": ["UTC(01/01->31/12)", "WD(SR/30/E->SS/30/L)"]}
+		*AExSAT Yes
+		*AExSUN Yes
+		*AExHOL Yes
+		AH 2100FT AMSL
+		*AH2 1400FT AGL
+		AL SFC
+		V X=49:37:0N 4:34:50E
+		DC 0.81
+
+		*** Tracé contenant arc-horaire et arc-antiHoraire, taille des coordonnées optimisée + ajout des nouvelles informations
 		AC D
 		AN TMA MONTPELLIER 2 App(130.855)
 		*AAlt ["2000FT AMSL/FL145", "609m/4419m"]
@@ -123,6 +148,7 @@ Exemples de contenus dans la nouvelle version |imgOpenairBeta|
 		V D=-
 		DB 43:40:1N 4:6:40E, 43:29:2N 3:50:39E
 		DP 43:29:2N 3:50:39E
+
 
 Documentation
 -------------
