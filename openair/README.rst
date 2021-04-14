@@ -213,9 +213,11 @@ Documentation
 * **AL & AH - Airspace Ceiling and Floor** - Définition des altitudes de Plancher et de Plafond  de la zone
 	1. |imgOpenair100| Texte multi-structuré
 		**AH** - ['UNL'('UNLIM')=Unlimited, '99999<Unit> <RefAlti>', 'FL999'=Flight-Level]
+		
 		**AL** - ['SFC'('GND')=Surface-au-sol, '99999<Unit> <refAlti>', 'FL999'=Flight-Level]
 			- **<Unit>** - Unité de mesure dans la liste ['FT'('F')=Feet, 'M'=Meter]
 			- **<RefAlti>** - Référence altimétrique selon la liste ['AMSL'('MSL','STD')=Above-Mean-Sea-Level, 'AGL'('ASFC'))=Above-Ground-Level]
+			
 	3. |imgOpenairBeta| Aucun changement proposé mais juste l'anonce d'un point d'attention MAJEUR !
 		- /!\\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
 		.. code::
