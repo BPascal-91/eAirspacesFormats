@@ -133,8 +133,8 @@ Documentation
 `Openair v1.0.1`_ - Une première extension du formalisme |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Openair Extended`_ - Version actuelle étandue |imgOpenairBeta|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Openair Extended`_ - Version actuelle étandue avec historique des évolutions |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * **AC - Airspace Class** - Classification des zones aériennes
 	1. |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=Restricted, 'Q'=danger, 'GP'=Glider-Prohibited, 'W'=Wave-Window, <Others>=Autres-classification]
 	2. |imgOpenair101| Liste complétée par ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM-référence]
@@ -142,47 +142,47 @@ Documentation
 
 * **AN - Airspace Name** - Libellé de la zone aérienne
 	1. |imgOpenair100| Texte libre, sans limitation de taille [mais limité à 16 caractères pour un export sous (Flytec)FAF-format]
-	2. |imgOpenair101| Texte libre, ou multi-structuré dans le cas d'une classe 'AC NOTAM':
-	**AN NOTAM NOTAM-reference 'Full-type' 'Shorter-type' 'Yet-shorter-type' 'Shortest-type' 'Start-time' 'End-time' 'Schedule' 'Text'**
-		- the literal text 'NOTAM'
-		- the NOTAM reference
-		- **'Full-type'** - The full NOTAM type
-		- **'Shorter-type'** - A shorter NOTAM type restricted to 40 characters
-		- **'Yet-shorter-type'** - A yet shorter NOTAM type restricted to 25 characters
-		- **'Shortest-type'** - The shortest NOTAM type, restricted to 16 characters
-		- **'Start-time'** - The NOTAM start
-		- **'End-time'** - The NOTAM end
-		- **'Schedule'** - The NOTAM schedule
-		- **'Text'** - The NOTAM text
-	.. code::
-	
-		*** Here's an example of a NOTAM exported to XCSoar:
-		AC NOTAM
-		AN NOTAM Air display 16Aug 12:30-16Aug 14:00 H3901/15 AIR DISPLAY/AEROBATICS WI 2NM RADIUS 511918N 0000431E (VCY BIGGIN HILL, KENT). OPS CTC 07803 713470. 15-08-0337/AS4.
-		AL SFC
-		AH 2400ALT
-		V X=51:19:18 N 000:04:31 E
-		DC 2
+	2. |imgOpenair101| Texte libre, ou multi-structuré dans le cas d'une classe 'AC NOTAM'
+		**AN NOTAM NOTAM-reference 'Full-type' 'Shorter-type' 'Yet-shorter-type' 'Shortest-type' 'Start-time' 'End-time' 'Schedule' 'Text'**
+			- the literal text 'NOTAM'
+			- the NOTAM reference
+			- **'Full-type'** - The full NOTAM type
+			- **'Shorter-type'** - A shorter NOTAM type restricted to 40 characters
+			- **'Yet-shorter-type'** - A yet shorter NOTAM type restricted to 25 characters
+			- **'Shortest-type'** - The shortest NOTAM type, restricted to 16 characters
+			- **'Start-time'** - The NOTAM start
+			- **'End-time'** - The NOTAM end
+			- **'Schedule'** - The NOTAM schedule
+			- **'Text'** - The NOTAM text
+		.. code::
+		
+			*** Here's an example of a NOTAM exported to XCSoar:
+			AC NOTAM
+			AN NOTAM Air display 16Aug 12:30-16Aug 14:00 H3901/15 AIR DISPLAY/AEROBATICS WI 2NM RADIUS 511918N 0000431E (VCY BIGGIN HILL, KENT). OPS CTC 07803 713470. 15-08-0337/AS4.
+			AL SFC
+			AH 2400ALT
+			V X=51:19:18 N 000:04:31 E
+			DC 2
 
 	3. |imgOpenairBeta| Texte libre, ou multi-structuré:
-	**AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]**
-		- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole]
-		- **'TypeMhz'** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
-		- **'CodeActivity'** - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARAGLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
-		- **'SeeNOTAM'** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
-		- **'Upper'** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
-		- **'Lower'** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
-	.. code::
-	
-		*** Quelques exemples
-		- AN R KOKSIJDE (MILOPS)
-		- AN R KOKSIJDE (MILOPS)
-		- AN RMZ MORLAIX Twr(118.500)
-		- AN ZRT A400M Twr(124.800) (SeeNotam)
-		- AN TMA ETAIN 1 App(120.125) (SeeNotam)
-		- AN FFVL-Prot LE TOUQUET Twr(118.450) (PARAGLIDER)
-		- AN CTR CHAMBERY 1 Twr(118.300) Upper(3500FT AMSL-1000FT AGL)
-		- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
+		**AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]**
+			- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole]
+			- **'TypeMhz'** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
+			- **'CodeActivity'** - Codification de l'activité de la zone : parmis la liste ['NUCLEAR', 'MILOPS', 'GLIDER', 'PARAGLIDER', 'PARACHUTE', 'BALOON', 'SPORT', ...]
+			- **'SeeNOTAM'** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
+			- **'Upper'** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
+			- **'Lower'** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
+		.. code::
+		
+			*** Quelques exemples
+			- AN R KOKSIJDE (MILOPS)
+			- AN R KOKSIJDE (MILOPS)
+			- AN RMZ MORLAIX Twr(118.500)
+			- AN ZRT A400M Twr(124.800) (SeeNotam)
+			- AN TMA ETAIN 1 App(120.125) (SeeNotam)
+			- AN FFVL-Prot LE TOUQUET Twr(118.450) (PARAGLIDER)
+			- AN CTR CHAMBERY 1 Twr(118.300) Upper(3500FT AMSL-1000FT AGL)
+			- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
 	* |imgOpenair100| ../..
