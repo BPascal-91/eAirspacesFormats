@@ -212,7 +212,7 @@ Documentation
 
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
 	* |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
-	Présentation officielle OACI: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
+	Présentation officielle OACI: <img src="res/LFR210_double-ref-alti_upper.jpg" width="50"> ou |imgLFR210-doubleRefAltiUpper|
 		.. code::
 		
 			*** Exemple concret
