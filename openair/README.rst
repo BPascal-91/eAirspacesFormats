@@ -27,6 +27,7 @@ Vous trouverez ci-dessous ; l'historique des évolutions ainsi que la descriptio
 Exemples de contenus en version initiale |imgOpenair100|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	.. code::
+	
 		*** Tracé d'un rectangle, coordonnées précisées avec une taille-fixe
 		AC D
 		AN TMA ORLEANS 5.1
@@ -68,6 +69,7 @@ Exemples de contenus en version initiale |imgOpenair100|
 Exemples de contenus dans la nouvelle version |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	.. code::
+	
 		*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
 		AC D
 		AN TMA ORLEANS 5.1 App(123.300) (FFVP-Prot)
@@ -153,6 +155,7 @@ Documentation
 		- **'Schedule'** - The NOTAM schedule
 		- **'Text'** - The NOTAM text
 	.. code::
+	
 		*** Here's an example of a NOTAM exported to XCSoar:
 		AC NOTAM
 		AN NOTAM Air display 16Aug 12:30-16Aug 14:00 H3901/15 AIR DISPLAY/AEROBATICS WI 2NM RADIUS 511918N 0000431E (VCY BIGGIN HILL, KENT). OPS CTC 07803 713470. 15-08-0337/AS4.
@@ -170,6 +173,7 @@ Documentation
 		- **'Upper'** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
 		- **'Lower'** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
 	.. code::
+	
 		*** Quelques exemples
 		- AN R KOKSIJDE (MILOPS)
 		- AN R KOKSIJDE (MILOPS)
