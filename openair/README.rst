@@ -16,9 +16,8 @@ Description
 -----------
 Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 
-Quelques exemples
------------------
-	En version initiale |imgOpenair100|
+Exemples de contenu en version initiale |imgOpenair100|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code::
 
 	*** Tracé d'un rectangle, coordonnées précisées avec une taille-fixe
@@ -60,7 +59,8 @@ Quelques exemples
 	DP 43:29:20 N 003:50:39 E
 
 
-En nouvelle version |imgOpenairBeta|
+Exemples de contenu en version initiale |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code::
 
 	*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
