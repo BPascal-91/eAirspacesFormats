@@ -169,17 +169,17 @@ Documentation
 * **AN - Airspace Name** - Libellé de la zone aérienne
 	1. |imgOpenair100| Texte libre, sans limitation de taille [mais limité à 16 caractères pour un export sous (Flytec)FAF-format]
 	2. |imgOpenair101| Texte libre, ou multi-structuré dans le cas d'une classe 'AC NOTAM'
-		**AN NOTAM <NOTAM-reference> <Full-type> <Shorter-type> <Yet-shorter-type> <Shortest-type> <Start-time> <End-time> <Schedule> <Text>**
-			- the literal text 'NOTAM'
-			- the NOTAM reference
-			- **'Full-type'** - The full NOTAM type
-			- **'Shorter-type'** - A shorter NOTAM type restricted to 40 characters
-			- **'Yet-shorter-type'** - A yet shorter NOTAM type restricted to 25 characters
-			- **'Shortest-type'** - The shortest NOTAM type, restricted to 16 characters
-			- **'Start-time'** - The NOTAM start
-			- **'End-time'** - The NOTAM end
-			- **'Schedule'** - The NOTAM schedule
-			- **'Text'** - The NOTAM text
+		**AN NOTAM <NOTAM-ref> <Full-type> <Shorter-type> <Yet-shorter-type> <Shortest-type> <Start-time> <End-time> <Schedule> <Text>**
+			- **'NOTAM'** - the literal text
+			- **<NOTAM-ref>** - the NOTAM reference
+			- **<Full-type>** - The full NOTAM type
+			- **<Shorter-type>** - A shorter NOTAM type restricted to 40 characters
+			- **<Yet-shorter-type>** - A yet shorter NOTAM type restricted to 25 characters
+			- **<Shortest-type>** - The shortest NOTAM type, restricted to 16 characters
+			- **<Start-time>** - The NOTAM start
+			- **<End-time>** - The NOTAM end
+			- **<Schedule>** - The NOTAM schedule
+			- **<Text>** - The NOTAM text
 		.. code::
 		
 			*** Here's an example of a NOTAM exported to XCSoar:
@@ -191,13 +191,13 @@ Documentation
 			DC 2
 
 	3. |imgOpenairBeta| Texte libre, ou multi-structuré:
-		**AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]**
-			- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'TRA'=Temporary-Reserved-Area, 'TSA'=Temporary-Segregated-Area, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'PROTECT'=Airspace-protected-from-specific-air-traffic, 'NATURE'=Natural-reserve, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole, 'SPORT'=Aerial-sporting, 'TRPLA'=Treuil-Planeurs, 'TRVL'=Treuil-Vol-Libre, 'PJE'=Parachute-Jumping-Exercise, 'BAL'('BALLOON','BALLOONING')=hot-air-BALloons, 'AER'Radio-controlled-model-flying, 'PRN'=Police-rescue-activity-or-nature-reserve-management-operations, 'ATZ'=Aerodrome-Traffic-Zone, 'AWY'=Airway, 'FIS'=Flight-Information-Service, 'UTA'=Upper-Control-Area]
-			- **'TypeMhz'** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
-			- **'CodeActivity'** - Codification de l'activité de la zone : parmis la liste [PARAGLIDER, HANGGLIDER, GLIDER, PARACHUTE, ULM, NATURE, NO-NOISE, FIRE, GAZ, HI-RADIO, IND-CHEM, IND-NUCLEAR, IND-OIL, JETCLIMB, LASER, MILOPS, MISSILES, NAVAL,  PROCEDURE, REFUEL, SHOOT, SPORT, TECHNICAL, TFC-AD, TFC-HELI, TRG, UAV, VIP, VIP-PRES, WORK, OTHER]
-			- **'SeeNOTAM'** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
-			- **'Upper'** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
-			- **'Lower'** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
+		**AN <Type> Nom-de-la-zone [<TypeMhz>(Freq-Principale)] [([<CodeActivity>] / [<SeeNOTAM>])] [<Upper>(Alt1/Alt2) et/ou <Lower>(Alt1/Alt2)]**
+			- **<Type>** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'TRA'=Temporary-Reserved-Area, 'TSA'=Temporary-Segregated-Area, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'PROTECT'=Airspace-protected-from-specific-air-traffic, 'NATURE'=Natural-reserve, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole, 'SPORT'=Aerial-sporting, 'TRPLA'=Treuil-Planeurs, 'TRVL'=Treuil-Vol-Libre, 'PJE'=Parachute-Jumping-Exercise, 'BAL'('BALLOON','BALLOONING')=hot-air-BALloons, 'AER'Radio-controlled-model-flying, 'PRN'=Police-rescue-activity-or-nature-reserve-management-operations, 'ATZ'=Aerodrome-Traffic-Zone, 'AWY'=Airway, 'FIS'=Flight-Information-Service, 'UTA'=Upper-Control-Area]
+			- **<TypeMhz>** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
+			- **<CodeActivity>** - Codification de l'activité de la zone : parmis la liste [PARAGLIDER, HANGGLIDER, GLIDER, PARACHUTE, ULM, NATURE, NO-NOISE, FIRE, GAZ, HI-RADIO, IND-CHEM, IND-NUCLEAR, IND-OIL, JETCLIMB, LASER, MILOPS, MISSILES, NAVAL,  PROCEDURE, REFUEL, SHOOT, SPORT, TECHNICAL, TFC-AD, TFC-HELI, TRG, UAV, VIP, VIP-PRES, WORK, OTHER]
+			- **<SeeNOTAM>** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
+			- **<Upper>** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
+			- **<Lower>** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
 		.. code::
 		
 			*** Quelques exemples
@@ -211,10 +211,31 @@ Documentation
 			- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 * **AL & AH - Airspace Ceiling and Floor** - Définition des altitudes de Plancher et de Plafond  de la zone
-	1. |imgOpenair100| Texte multi-structuré ['SFC'('GND')=Surface-au-sol, 'UNL'('UNLIM')=Unlimited, '99999<Unit> <refAlti>', 'FL999'=Flight-Level]
-		'AGL'('AAGL','ASFC')
-		'AMSL'('MSL', 'STD')
-	3. |imgOpenairBeta| 
+	1. |imgOpenair100| Texte multi-structuré 
+	** AH ['UNL'('UNLIM')=Unlimited, '99999<Unit> <RefAlti>', 'FL999'=Flight-Level]
+	** AL ['SFC'('GND')=Surface-au-sol, '99999<Unit> <refAlti>', 'FL999'=Flight-Level]
+		- **<Unit>** - Unité de mesure dans la liste ['FT'('F')=Feet, 'M'=Meter]
+		- **<RefAlti>** - Référence altimétrique selon la liste ['AMSL'('MSL','STD')=Above-Mean-Sea-Level, 'AGL'('ASFC'))=Above-Ground-Level]
+	3. |imgOpenairBeta| Aucun changement proposé mais juste l'anonce d'un point d'attention MAJEUR !
+		- /!\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
+		.. code::
+		
+			*** Quelques exemples concrets
+			AC D
+			AN CTR CHAMBERY 1
+			AH 3500FT AMSL			--> 3500 Pieds relatif au niveau moyen de la mer
+			AL SFC					--> Surface du sol, éventuellement assimilable à 0 mètre pour notre activité ;-)
+
+			AC D
+			AN CTR CHAMBERY 3
+			AH 1000FT AGL			--> 1000 Pieds au dessus du sol, l'altitude dépend donc de la hauteur ou topologie du terrain
+			AL SFC
+			
+			AC D
+			AN TMA CHAMBERY 1
+			AH FL095				--> Niveau de vol fixé à 9500 Pieds ; l'altitude dépend donc de la pression atmosphérique
+			AL 3000FT AMSL			
+
 	
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
 	3. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
