@@ -20,12 +20,12 @@ Le format **OpenAir** a pris naissance dans les années 1990. Depuis 30 ans main
 De nos jours; le besoin des pilotes a évolué. L'information aéronautique s'est grandement digitalisée et les capcités informatique mis à disposition des pilotes n'a cessé de progresser.
 Il est donc temps de faire évoluer ce format historique afin de répondre aux nouveaux enjeux ciblés !
 
-Depuis septembre 2019 ; `Pascal Bazile`_ s'attache à compléter se formalisme pour étendre ses capacités et y ajouter de nombreuses informations utiles aux piloltes...
-Vous trouverez ci-dessous ; l'historique des évolutions ainsi que la description détaillée de ce formalisme **`Openair`_**
+Depuis septembre 2019 ; `Pascal Bazile`_ s'attache à compléter se formalisme pour étendre ses capacités et y ajouter de nombreuses informations utiles à tous les piloltes...
+Vous trouverez ci-dessous ; l'historique des évolutions ainsi que la description détaillée de ce formalisme `Openair`_
 
 
-Exemples de contenu en version initiale |imgOpenair100|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exemples de contenus en version initiale |imgOpenair100|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code::
 
 	*** Tracé d'un rectangle, coordonnées précisées avec une taille-fixe
@@ -67,8 +67,8 @@ Exemples de contenu en version initiale |imgOpenair100|
 	DP 43:29:20 N 003:50:39 E
 
 
-Exemples de contenu dans la nouvelle version |imgOpenairBeta|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exemples de contenus dans la nouvelle version |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code::
 
 	*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
@@ -128,19 +128,21 @@ Exemples de contenu dans la nouvelle version |imgOpenairBeta|
 
 Documentation
 -------------
+
 `Openair Standard`_ - Version initiale |imgOpenair100|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Openair 101`_ - Une première extension du formalisme |imgOpenair101|
+`Openair v1.0.1`_ - Une première extension du formalisme |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Openair Extended`_ - Version étandue |imgOpenairBeta|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Openair Extended`_ - Version actuelle étandue |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. **AC - Airspace Class** - Classification des zones aériennes
 	* |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=Restricted, 'Q'=danger, 'GP'=Glider-Prohibited, 'W'=Wave-Window, <Others>=Autres-classification]
 	* |imgOpenair101| Liste complétée par ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM-référence]
 	* |imgOpenairBeta| Liste complétée par ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole, 'FFVP'=FFVP-Protocole]
-	
+
+
 2. **AN - Airspace Name** - Libellé de la zone aérienne
 	* |imgOpenair100| Texte libre, sans limitation de taille [mais limité à 16 caractères pour un export sous (Flytec)FAF-format]
 	* |imgOpenair101| Texte libre, ou multi-structuré dans le cas d'une classe 'AC NOTAM':
@@ -157,8 +159,15 @@ Documentation
 		- **'Text'** - The NOTAM text
 .. code::
 
-	**Exemples**
-	
+	*** Here's an example of a NOTAM exported to XCSoar:
+	AC NOTAM
+	AN NOTAM Air display 16Aug 12:30-16Aug 14:00 H3901/15 AIR DISPLAY/AEROBATICS WI 2NM RADIUS 511918N 0000431E (VCY BIGGIN HILL, KENT). OPS CTC 07803 713470. 15-08-0337/AS4.
+	AL SFC
+	AH 2400ALT
+	V X=51:19:18 N 000:04:31 E
+	DC 2
+
+
 	* |imgOpenairBeta| Texte libre, ou multi-structuré:
 	**AN 'Type' Nom-de-la-zone ['TypeMhz'(Freq-Principale)] [(['CodeActivity'] / [SeeNOTAM])] [Upper(Alt1/Alt2) et/ou Lower(Alt1/Alt2)]**
 		- **'Type'** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole]
@@ -169,15 +178,15 @@ Documentation
 		- **'Lower'** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
 .. code::
 
-	**Exemples**
-		- AN R KOKSIJDE (MILOPS)
-		- AN R KOKSIJDE (MILOPS)
-		- AN RMZ MORLAIX Twr(118.500)
-		- AN ZRT A400M Twr(124.800) (SeeNotam)
-		- AN TMA ETAIN 1 App(120.125) (SeeNotam)
-		- AN FFVL-Prot LE TOUQUET Twr(118.450) (PARAGLIDER)
-		- AN CTR CHAMBERY 1 Twr(118.300) Upper(3500FT AMSL-1000FT AGL)
-		- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
+	*** Quelques exemples
+	- AN R KOKSIJDE (MILOPS)
+	- AN R KOKSIJDE (MILOPS)
+	- AN RMZ MORLAIX Twr(118.500)
+	- AN ZRT A400M Twr(124.800) (SeeNotam)
+	- AN TMA ETAIN 1 App(120.125) (SeeNotam)
+	- AN FFVL-Prot LE TOUQUET Twr(118.450) (PARAGLIDER)
+	- AN CTR CHAMBERY 1 Twr(118.300) Upper(3500FT AMSL-1000FT AGL)
+	- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 
 3. **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
@@ -200,7 +209,7 @@ Crédit
    :target: `Openair Standard`_
    :alt: `OpenAir`_ 1.0.0
 .. |imgOpenair101| image:: res/openair_v1.0.1.svg
-   :target: `Openair 101`_
+   :target: `Openair v1.0.1`_
    :alt: `OpenAir`_ v1.0.1
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
    :target: `Openair`_
@@ -213,6 +222,6 @@ Crédit
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
 .. _Openair Extended: https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#openair-extended
 .. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
-.. _Openair 101: https://notaminfo.com/exporthelp#stdopenair
+.. _Openair v1.0.1: https://notaminfo.com/exporthelp#stdopenair
 .. _Openair Extended: http://pascal.bazile.free.fr/paraglidingFolder/divers/GPS/OpenAir-Format/
 
