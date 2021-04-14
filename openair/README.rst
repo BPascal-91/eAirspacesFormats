@@ -14,7 +14,15 @@ Un format ouvert pour l'encodage de données aéronautiques.
 
 Description
 -----------
-Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
+Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels.
+
+Le format **OpenAir** a pris naissance dans les années 1990. Depuis 30 ans maintenant, ce langage perdure car il est utilisé par de nombreux outils cartographique ou appreils de géolocalisation de type GPS.
+De nos jours; le besoin des pilotes a évolué. L'information aéronautique s'est grandement digitalisée et les capcités informatique mis à disposition des pilotes n'a cessé de progresser.
+Il est donc temps de faire évoluer ce format historique afin de répondre aux nouveaux enjeux ciblés !
+
+Depuis septembre 2019 ; `Pascal Bazile`_ s'attache à compléter se formalisme pour étendre ses capacités et y ajouter de nombreuses informations utiles aux piloltes...
+Vous trouverez ci-dessous ; l'historique des évolutions ainsi que la description détaillée de ce formalisme **`Openair`_**
+
 
 Exemples de contenu en version initiale |imgOpenair100|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,8 +67,8 @@ Exemples de contenu en version initiale |imgOpenair100|
 	DP 43:29:20 N 003:50:39 E
 
 
-Exemples de contenu en version initiale |imgOpenairBeta|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exemples de contenu dans la nouvelle version |imgOpenairBeta|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code::
 
 	*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
@@ -120,19 +128,14 @@ Exemples de contenu en version initiale |imgOpenairBeta|
 
 Documentation
 -------------
-`Openair Standard`_ - Version initiale |imgOpenair100| ; puis une première extension |imgOpenair101|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Openair Standard`_ - Version initiale |imgOpenair100|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Openair 101`_ - Une première extension du formalisme |imgOpenair101|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Openair Extended`_ - Version étandue |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Le format **OpenAir** a pris naissance dans les années 1990. Depuis 30 ans maintenant, ce langage perdure car il est encore utilisé par de nombreux outils cartographique ou appreils de géolocalisation de type GPS.
-De nos jours; le besoin des pilotes a évolué. L'information aéronautique est maintenant digitalisée et les capcités informatique mis a disposition des pilotes n'a cessé de progresser.
-Il est donc temps de faire évoluer ce format historique afin de répondre aux nouveaux enjeux ciblés. 
-
-Pour ce faire, plusieurs informations ont étés ajoutés dans le format OpenAir.
-Vous trouverez ci-dessous; la description historique du format 'Openair' ; complété des informations nouvellements ajoutées pour étendre ses capacités: 
-
 1. **AC - Airspace Class** - Classification des zones aériennes
 	* |imgOpenair100| Liste initiale ['A'=Class A, 'B'=Class B, 'C'=Class C, 'D'=Class D, 'E'=Class E, 'G'=Class G, 'CTR'=Control-Traffic-Region, 'P'=Prohibited, 'R'=Restricted, 'Q'=danger, 'GP'=Glider-Prohibited, 'W'=Wave-Window, <Others>=Autres-classification]
 	* |imgOpenair101| Liste complétée par ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM-référence]
