@@ -190,7 +190,7 @@ Documentation
 			V X=51:19:18 N 000:04:31 E
 			DC 2
 
-	3. |imgOpenairBeta| Texte libre, ou multi-structuré:
+	3. |imgOpenairBeta| Texte libre, ou multi-structuré
 		**AN <Type> Nom-de-la-zone [<TypeMhz>(Freq-Principale)] [([<CodeActivity>] / [<SeeNOTAM>])] [<Upper>(Alt1/Alt2) et/ou <Lower>(Alt1/Alt2)]**
 			- **<Type>** - Typage de la zone : parmis la liste ['TMA'=Terminal-Manoeuvring-Area, 'CTR'=Control-Traffic-Region, 'RTBA'=Reseau-Tres-Basse-Altitude, 'ZIT'=Zone-Interdite-Temporaire, 'TRA'=Temporary-Reserved-Area, 'TSA'=Temporary-Segregated-Area, 'CTA'=ConTrol-Area, 'CBA'=Cross-Boerder-Area, 'LTA'=Lower-Trafic-Area, 'PROTECT'=Airspace-protected-from-specific-air-traffic, 'NATURE'=Natural-reserve, 'FFVL-Prot'=FFVL-Protocole, 'FFVP-Prot'=FFVP-Protocole, 'SPORT'=Aerial-sporting, 'TRPLA'=Treuil-Planeurs, 'TRVL'=Treuil-Vol-Libre, 'PJE'=Parachute-Jumping-Exercise, 'BAL'('BALLOON','BALLOONING')=hot-air-BALloons, 'AER'Radio-controlled-model-flying, 'PRN'=Police-rescue-activity-or-nature-reserve-management-operations, 'ATZ'=Aerodrome-Traffic-Zone, 'AWY'=Airway, 'FIS'=Flight-Information-Service, 'UTA'=Upper-Control-Area]
 			- **<TypeMhz>** - Typage de la fréquence-radio-principale qui est affichée : parmis la liste ['App'=Approche, 'Twr'=Tower, 'FIS'=Flight-Information-Service, 'AFIS'=Automatic-Fligth-Information-Service, 'ATIS'=Automatic-Terminal-Information-Service, ...]
@@ -211,13 +211,13 @@ Documentation
 			- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
 * **AL & AH - Airspace Ceiling and Floor** - Définition des altitudes de Plancher et de Plafond  de la zone
-	1. |imgOpenair100| Texte multi-structuré 
-	** AH ['UNL'('UNLIM')=Unlimited, '99999<Unit> <RefAlti>', 'FL999'=Flight-Level]
-	** AL ['SFC'('GND')=Surface-au-sol, '99999<Unit> <refAlti>', 'FL999'=Flight-Level]
-		- **<Unit>** - Unité de mesure dans la liste ['FT'('F')=Feet, 'M'=Meter]
-		- **<RefAlti>** - Référence altimétrique selon la liste ['AMSL'('MSL','STD')=Above-Mean-Sea-Level, 'AGL'('ASFC'))=Above-Ground-Level]
+	1. |imgOpenair100| Texte multi-structuré
+		** AH ['UNL'('UNLIM')=Unlimited, '99999<Unit> <RefAlti>', 'FL999'=Flight-Level]
+		** AL ['SFC'('GND')=Surface-au-sol, '99999<Unit> <refAlti>', 'FL999'=Flight-Level]
+			- **<Unit>** - Unité de mesure dans la liste ['FT'('F')=Feet, 'M'=Meter]
+			- **<RefAlti>** - Référence altimétrique selon la liste ['AMSL'('MSL','STD')=Above-Mean-Sea-Level, 'AGL'('ASFC'))=Above-Ground-Level]
 	3. |imgOpenairBeta| Aucun changement proposé mais juste l'anonce d'un point d'attention MAJEUR !
-		- /!\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
+		- /!\\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
 		.. code::
 		
 			*** Quelques exemples concrets
