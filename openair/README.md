@@ -246,13 +246,13 @@ Crédit
 .. |imgOpenairBeta| image:: res/openair_betaVersion.svg
 	:target: `Openair`_
 	:alt: `Openair`_ beta
+.. |imgLFR210-doubleRefAltiUpper-DIRHTML-ne-fonctionne-pas| raw:: html <img src="res/LFR210_double-ref-alti_upper.jpg" width="50">
 .. |imgLFLB1-doubleRefAltiUpper| image:: res/LFLB1_double-ref-alti_upper.jpg
    :height: 100
    :width: 200
    :scale: 50
    :alt: Double Ref. Alti. (Upper)
-.. |imgLFR210-doubleRefAltiUpper| raw:: html <img src="res/LFR210_double-ref-alti_upper.jpg" width="50">
-.. |imgLFR210-doubleRefAltiUpperOLD| image:: res/LFR210_double-ref-alti_upper.jpg
+.. |imgLFR210-doubleRefAltiUpper| image:: res/LFR210_double-ref-alti_upper.jpg
    :height: 100
    :width: 200
    :scale: 50
