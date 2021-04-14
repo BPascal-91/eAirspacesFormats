@@ -169,7 +169,7 @@ Documentation
 * **AN - Airspace Name** - Libellé de la zone aérienne
 	1. |imgOpenair100| Texte libre, sans limitation de taille [mais limité à 16 caractères pour un export sous (Flytec)FAF-format]
 	2. |imgOpenair101| Texte libre, ou multi-structuré dans le cas d'une classe 'AC NOTAM'
-		**AN NOTAM NOTAM-reference 'Full-type' 'Shorter-type' 'Yet-shorter-type' 'Shortest-type' 'Start-time' 'End-time' 'Schedule' 'Text'**
+		**AN NOTAM <NOTAM-reference> <Full-type> <Shorter-type> <Yet-shorter-type> <Shortest-type> <Start-time> <End-time> <Schedule> <Text>**
 			- the literal text 'NOTAM'
 			- the NOTAM reference
 			- **'Full-type'** - The full NOTAM type
@@ -185,8 +185,8 @@ Documentation
 			*** Here's an example of a NOTAM exported to XCSoar:
 			AC NOTAM
 			AN NOTAM Air display 16Aug 12:30-16Aug 14:00 H3901/15 AIR DISPLAY/AEROBATICS WI 2NM RADIUS 511918N 0000431E (VCY BIGGIN HILL, KENT). OPS CTC 07803 713470. 15-08-0337/AS4.
-			AL SFC
 			AH 2400ALT
+			AL SFC
 			V X=51:19:18 N 000:04:31 E
 			DC 2
 
@@ -210,8 +210,14 @@ Documentation
 			- AN CTR CHAMBERY 1 Twr(118.300) Upper(3500FT AMSL-1000FT AGL)
 			- AN TMA CHAMBERY 1 App(123.700) (SeeNotam) Lower(1000FT AGL-3000FT AMSL)
 
+* **AL & AH - Airspace Ceiling and Floor** - Définition des altitudes de Plancher et de Plafond  de la zone
+	1. |imgOpenair100| Texte multi-structuré ['SFC'('GND')=Surface-au-sol, 'UNL'('UNLIM')=Unlimited, '99999<Unit> <refAlti>', 'FL999'=Flight-Level]
+		'AGL'('AAGL','ASFC')
+		'AMSL'('MSL', 'STD')
+	3. |imgOpenairBeta| 
+	
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
-	* |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
+	3. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
 	Présentation officielle OACI: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
 		.. code::
 		
