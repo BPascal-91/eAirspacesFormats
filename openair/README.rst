@@ -241,18 +241,19 @@ Documentation
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
 	3. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
 	Utiliser le même formalisme que les éléments **AL & AH** (présenté ci-dessus)
-		Deux cas concrets sur cartographie officielle OACI France: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
-			.. code::
-			
-				*** Exemple concret
-				AC R
-				AN R 210 Upper(2100FT AMSL-1400FT AGL)
-				*AAlt ["SFC/2100FT AMSL-1400FT AGL", "0m/640m"]
-				AH 2100FT AMSL
-				*AH2 1400FT AGL
-				AL SFC
-				V X=49:37:0N 4:34:50E
-				DC 0.81
+	
+	Deux cas concrets sur cartographie officielle OACI France: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
+		.. code::
+		
+			*** Exemple concret
+			AC R
+			AN R 210 Upper(2100FT AMSL-1400FT AGL)
+			*AAlt ["SFC/2100FT AMSL-1400FT AGL", "0m/640m"]
+			AH 2100FT AMSL
+			*AH2 1400FT AGL
+			AL SFC
+			V X=49:37:0N 4:34:50E
+			DC 0.81
 
 
 Official Data or Map
