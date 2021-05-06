@@ -1,6 +1,6 @@
 |imgOpenair10| |imgOpenairBeta| |imgFaf10| |imgAixm45| |imgAixm51| |imgOfmx00|
 
-`eAirspacesFormats`_ - Electreonic Airspaces Formats
+`eAirspacesFormats`_ - Electronic Airspaces Formats
 ====================================================
 Présentation des formalismes électroniques utilisés pour la description des espaces-aériens et infrastructures positionnées au sol.
 
