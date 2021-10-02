@@ -93,13 +93,13 @@ Crédit
 
 
 .. |imgOpenair100| image:: openair/res/openair_v1.0.0.svg
-	:target: `Openair Standard`_
+	:target: `Openair`_
 	:alt: `OpenAir`_ 1.0.0
 .. |imgOpenair101| image:: openair/res/openair_v1.0.1.svg
-	:target: `Openair v1.0.1`_
+	:target: `Openair`_
 	:alt: `OpenAir`_ v1.0.1
 .. |imgOpenair102| image:: openair/res/openair_v1.0.2.svg
-	:target: `Openair v1.0.2`_
+	:target: `Openair`_
 	:alt: `OpenAir`_ v1.0.2
 .. |imgOpenairBeta| image:: openair/res/openair_betaVersion.svg
 	:target: `Openair`_
