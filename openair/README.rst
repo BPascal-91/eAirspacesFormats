@@ -157,16 +157,12 @@ Exemples des mêmes contenus dans la nouvelle version |imgOpenairBeta|
 
 Documentation
 -------------
-
 `Openair Standard`_ - Version initiale |imgOpenair100|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 `Openair v1.0.1`_ - Une première extension du formalisme |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Openair v1.0.2`_ - Une seconde extension du formalisme |imgOpenair102|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+`Openair v1.0.2`_ - Une seconde  extension du formalisme |imgOpenair102|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `Openair Extended`_ - Version actuelle étandue avec historique des évolutions |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * **AC - Airspace Class** - Classification des zones aériennes
@@ -327,5 +323,6 @@ Crédit
 .. _Openair Extended: `Openair (on GitHub)`_
 .. _Openair (on GitHub): https://github.com/BPascal-91/eAirspacesFormats/tree/master/openair/#readme
 .. _Openair v1.0.1: https://notaminfo.com/exporthelp#stdopenair
+.. _Openair v1.0.2: http://www.winpilot.com/UsersGuide/UserAirspace.asp
 .. _Openair Standard: http://www.winpilot.com/UsersGuide/UserAirspace.asp
 
