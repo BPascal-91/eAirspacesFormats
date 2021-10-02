@@ -252,7 +252,6 @@ Documentation
 		- /!\\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
 
 		.. code::
-		
 			*** Quelques exemples concrets
 			AC D
 			AN CTR CHAMBERY 1
