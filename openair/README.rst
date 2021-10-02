@@ -80,7 +80,9 @@ Exemples des mêmes contenus dans la nouvelle version |imgOpenairBeta|
 	
 		*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
 		AC D
+		AY TMA
 		AN TMA ORLEANS 5.1 App(123.300) (FFVP-Prot)
+		AF 123.300
 		*AAlt ["3500FT AMSL/FL065", "1066m/1981m"]
 		*AUID GUId=LFOJ5.1 UId=1563043 Id=LFOJ5.1
 		*ADescr OAT/GAT procedures. Activity known on RAI 122.7, PARIS ACC/FIC or SEINE SIV. Except for: -LF-R 243 when active. - LF-P 34 SAINT LAURENT DES EAUX: entry prohibited, exception see AIP ENR 5.1
@@ -97,6 +99,7 @@ Exemples des mêmes contenus dans la nouvelle version |imgOpenairBeta|
 
 		*** Tracé d'un cercle, taille des coordonnées optimisée + ajout des nouvelles informations
 		AC P
+		AY ZIT
 		AN ZIT Luxeuil
 		*AAlt ["SFC/500FT AGL", "0m/429m"]
 		*AUID GUId=ZITLUXEUIL UId=BPa-FR-SIA-SUPAIP-2020-069-ZITLUXEUIL-ZIT Id=ZITLUXEUIL
@@ -127,7 +130,9 @@ Exemples des mêmes contenus dans la nouvelle version |imgOpenairBeta|
 
 		*** Tracé contenant arc-horaire et arc-antiHoraire, taille des coordonnées optimisée + ajout des nouvelles informations
 		AC D
+		AY TMA
 		AN TMA MONTPELLIER 2 App(130.855)
+		AF 130.855
 		*AAlt ["2000FT AMSL/FL145", "609m/4419m"]
 		*AUID GUId=LFMT2 UId=1566551 Id=LFMT2
 		*ADescr Portions of this airspace coexist with LF- R 108 E1, 108 E2 and 108 C ISTRES, whose entry conditions are stated in part ENR 5.1.
@@ -157,10 +162,10 @@ Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Openair v1.0.1`_ - Une première extension du formalisme |imgOpenair101|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Openair v1.0.2`_ - Une seconde extension du formalisme |imgOpenair102|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Openair Extended`_ - Version actuelle étandue avec historique des évolutions |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
