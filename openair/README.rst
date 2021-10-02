@@ -164,7 +164,7 @@ Documentation
 `Openair v1.0.1`_ - Une première extension du formalisme |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Openair v1.0.2`_ - Une seconde extension du formalisme |imgOpenair102|
+`Openair v1.0.2`_ - Une seconde  extension du formalisme |imgOpenair102|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Openair Extended`_ - Version actuelle étandue avec historique des évolutions |imgOpenairBeta|
