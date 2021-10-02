@@ -256,37 +256,51 @@ Documentation
 			*** Quelques exemples concrets
 			AC D
 			AN CTR CHAMBERY 1
-			AH 3500FT AMSL			--> 3500 Pieds relatif au niveau moyen de la mer
-			AL SFC					--> Surface du sol, éventuellement assimilable à 0 mètre pour notre activité ;-)
+			AH 3500FT AMSL      --> 3500 Pieds relatif au niveau moyen de la mer
+			AL SFC              --> Surface du sol (également assimilable à 0 mètre)
 
 			AC D
 			AN CTR CHAMBERY 3
-			AH 1000FT AGL			--> 1000 Pieds au dessus du sol, l'altitude dépend donc de la hauteur ou topologie du terrain
+			AH 1000FT AGL       --> 1000 Pieds au dessus du sol (dépendant de la topologie du terrain)
 			AL SFC
 			
 			AC D
 			AN TMA CHAMBERY 1
-			AH FL095				--> Niveau de vol fixé à 9500 Pieds ; l'altitude dépend donc de la pression atmosphérique
-			AL 3000FT AMSL			
+			AH FL095            --> Niveau de vol fixé à 9500 Pieds (dépendant de la pression atmosphérique)
+			AL 3000FT AMSL
 
 	
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
-	1. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
-	Utiliser le même formalisme que les éléments **AL & AH** (présenté ci-dessus)
+	1. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec une double-référence-altimétrique au niveau de son plafond
+	Le formalisme des niveaux/altidudes reste identique a ceux décrits pour les éléments **AL & AH** (présentés ci-dessus)
 	
-	Deux cas concrets: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
+	Deux cas d'exemples concrets: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
 
 		.. code::
 		
-			*** Exemple concret
+			*** Formalisation pour la LF-R210
 			AC R
 			AN R 210 Upper(2100FT AMSL-1400FT AGL)
 			*AAlt ["SFC/2100FT AMSL-1400FT AGL", "0m/640m"]
 			AH 2100FT AMSL
 			*AH2 1400FT AGL
 			AL SFC
-			V X=49:37:0N 4:34:50E
-			DC 0.81
+
+* **\*AL2 - Second Airspace Floor** - Seconde altitude de plancher de la zone
+	1. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec une double-référence-altimétrique au niveau de son plancher
+	Le formalisme des niveaux/altidudes reste identique a ceux décrits pour les éléments **AL & AH** (présentés ci-dessus)
+	
+	Un cas d'exemple concret: |LFLC1-20-doubleRefAltiUpper|
+
+		.. code::
+		
+			*** Formalisation pour la TMA CLERMONT
+			AC D
+			AN TMA CLERMONT 1.20 App(122.225) Lower(1000FT AGL-2700FT AMSL)
+			*AAlt ["1000FT AGL-2700FT AMSL/FL145", "822m/4419m"]
+			AH FL145
+			AL 2700FT AMSL
+			*AL2 1000FT AGL
 
 
 Official Data or Map
@@ -319,6 +333,11 @@ Crédit
    :scale: 50
    :alt: Double Ref. Alti. (Upper)
 .. |imgLFR210-doubleRefAltiUpper| image:: res/LFR210_double-ref-alti_upper.jpg
+   :height: 100
+   :width: 200
+   :scale: 50
+   :alt: Double Ref. Alti. (Upper)
+.. |LFLC1-20-doubleRefAltiUpper| image:: res/LFLC1-20_double-ref-alti_upper.jpg
    :height: 100
    :width: 200
    :scale: 50
