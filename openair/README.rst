@@ -170,12 +170,12 @@ Documentation
 	2. |imgOpenair101| Liste complétée par ['NOTAM'=NOtice-To-AirMan, 'NOTAM ref'=NOTAM-référence]
 	3. |imgOpenairBeta| Liste complétée par ['TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'ZSM'=Zone-Sensibilité-Majeur, 'FFVL'=FFVL-Protocole-for-PARAGLIDER, 'FFVP'=FFVP-Protocole-for-GLIDER, 'SIV'=Service-d'Information-en-Vol, "RAS"=Regulated-AirSpace, 'ADIZ'=Air-Defense-Identification-Zone, 'AMA'=Minimum-Altitude-Area, 'PART'=PART-of-airspace, 'FIR'=Flight-Information-Region, 'UIR'=Upper-Flight-Information-Region, "OCA"=Oceanic-Control-Area, 'POLITICAL'=Political-administrative-area, "NO-FIR"=Airspace-for-which-not-even-an-FIR-is-defined]
 
-* **AY - Airspace Type** - Typologie complémentaire des zones aériennes
+* **AY - Airspace Type** - Typologie des zones aériennes
 	1. |imgOpenair102| Liste initiale ['CTR'=Control-Traffic-Region, 'AWY'=Airway (corridor), 'TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'MTMA'=Military-Terminal-Zone]
 	2. |imgOpenairBeta| Liste complétée par ['ADIZ'=Air-Defense-Identification-Zone, 'AER'=Radio-controlled-model-flying, 'AMA'=Minimum-Altitude-Area, 'ATZ'=Aerodrome-Traffic-Zone, 'ATZ/RMZ'=Aerodrome-Traffic-Zone/Radio-Mandatory-Zone, 'BAL'=Hot-air-BALloons (BALLOON, BALLOONING), 'CBA'=Cross-Boerder-Area, 'CTA'=ConTrol-Area, 'FFVL-Prot'=FFVL-Protocole (Paragliding/Hangliding/Kite), 'FFVP-Prot'=FFVP-Protocole (Glider), 'FIR'=Flight-Information-Region, 'FIS'=Flight-Information-Service,'LTA'=Lower-Trafic-Area, 'NATURE'=Natural-reserve, 'OCA'=Oceanic-Control-Area, 'PART'=Part-of-an-airspace (used in airspace aggregations), 'PJE'=Parachute-Jumping-Exercise, 'POLITICAL'=Political/administrative area, 'PRN'=Police-rescue-activity-or-nature-reserve-management-operations, 'PROTECT'=Airspace-protected-from-specific-air-traffic, 'RAS'=Regulated Airspace (not otherwise covered), 'RTBA'=Reseau-Tres-Basse-Altitude, 'SECTOR'=Control-Sector, 'SIV'=Service-d'Information-de-Vol, 'SPORT'=Aerial-sporting, 'SUR'=Point-d'attention (Prisons)'TMA'=Terminal-Manoeuvring-Area, 'TRA'=Temporary-Reserved-Area, 'TRPLA'=Treuil-Planeurs, 'TRVL'=Treuil-Vol-Libre, 'TSA'=Temporary-Segregated-Area, 'UIR'=Upper-Flight-Information-Region, 'UTA'=Upper-Control-Area, 'ZIT'=Zone-Interdite-Temporaire, 'ZRT'=Zone-Règlementé-Temporaire, 'ZDT'=Zone-Danger-Temporaire, 'ZSM'=Zone-de-Sensibilité-Majeure (or 'MSZ' Major-Sensibility-Zone)]
 		.. code::
 		
-			*** Exemple concret
+			\*\*\* Exemple concret
 				AC R
 				AY RMZ
 				AN RMZ MORLAIX Twr(118.500)
@@ -241,7 +241,7 @@ Documentation
 			- **<Unit>** - Unité de mesure dans la liste ['FT'('F')=Feet, 'M'=Meter]
 			- **<RefAlti>** - Référence altimétrique selon la liste ['AMSL'('MSL','STD')=Above-Mean-Sea-Level, 'AGL'('ASFC'))=Above-Ground-Level]
 			
-	3. |imgOpenairBeta| Aucun changement proposé mais juste l'anonce d'un point d'attention MAJEUR !
+	2. |imgOpenairBeta| Aucun changement proposé mais juste l'anonce d'un point d'attention MAJEUR !
 		- /!\\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
 		.. code::
 		
@@ -263,7 +263,7 @@ Documentation
 
 	
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
-	3. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
+	1. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec un double-référence-altimétrique...
 	Utiliser le même formalisme que les éléments **AL & AH** (présenté ci-dessus)
 	
 	Deux cas concrets: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
