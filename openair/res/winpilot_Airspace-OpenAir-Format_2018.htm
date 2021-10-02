@@ -1,0 +1,1461 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>User's Guide - SUA</title>
+
+
+<style type="text/css">
+	TD {font-size:small;}
+	P, TD, DIV, UL {font-family:'Verdana, Arial';font-size=xx-small}
+	BODY { background:#FFFFFF;font-family:'Verdana, Arial';font-size=xx-small >
+
+</style>
+
+
+
+
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p>&nbsp;</p>
+
+<p align="center"><font color="#408080"><strong><big>Special Use Airspace</big></strong>
+&nbsp; </font></p>
+
+<p><font color="#FF8000"><strong><big>O</big>pen<big>A</big>ir</strong><small><small>tm</small></small></font><font color="#400040"><big>&nbsp; Airspace and Terrain description language is an easy to use
+and publicly available standard for displaying map information. <br>
+User can add or modify the data himself, therefore having a full control over what is
+being displayed on the screen. </big></font></p><big>
+
+<p><font color="#400040">For a list of available airspace files see our<big><strong> 
+<a href="http://www.winpilot.com/OpenAir/index.asp">airspace directory</a></strong></big>.</font></p>
+
+<p><font color="#400040"><b><u><i>NEW</i></u></b>: WinPilot Version 1.130 and later:&nbsp;<br>
+In addition to 'Airspace.txt', now WinPilot also reads a file called 'Terrain.txt'.<br>
+Both files can contain all OpenAir commands.<br>
+The intention of the 'Terrain.txt' file is to separate terrain description
+from airspace description.<br>
+The restriction of the maximum number of labels&nbsp; created by the AT command
+has been changed from 3 to unlimited.</font></p>
+
+<p><font color="#400040">There are two new map elements meant for displaying
+terrain and geographic&nbsp; features<br>
+(they differ from airspace in that they don't have popup labels attached):<br>
+<br>
+TO {string}&nbsp;&nbsp;&nbsp; ; Declares Terrain Open Polygon; string&nbsp;-&nbsp;
+name (optional)<br>
+TC {string}&nbsp;&nbsp;&nbsp; ; Declares Terrain Closed Polygon; string&nbsp;-
+name&nbsp; (optional)<br>
+<br>
+This commands make it easy to define things like lakes, roads, borders,
+etc<br>
+For example, to draw a lake using&nbsp; light blue color and a dark blue 1-pixel
+wide, solid border, that is visible at zoom levels 100km or closer, the
+following commands can be used:<br>
+<br>
+TC Lake Tahoe<br>
+SP 0, 1, 0, 0, 255<br>
+SB 200,200,255<br>
+V Z=100<br>
+DP 38:56:00 N 120:02:00 W<br>
+DP 38:56:40 N 120:04:00 W<br>
+DP 39:00:00 N 120:05:55 W<br>
+DP 39:01:45 N 120:07:00 W<br>
+DP 39:03:40 N 120:07:00 W<br>
+DP 39:05:00 N 120:09:00 W<br>
+DP 39:10:30 N 120:07:30 W<br>
+DP 39:11:00 N 120:06:00 W<br>
+...
+<br>
+<br>
+The three new commands seen above are:<br>
+SP - Select Pen - corresponds to Win32 API CreatePen<br>
+SB&nbsp; -Select Brush - corresponds to Win32 API CreateSolidBrush<br>
+and V Z=number (select a zoom level above which the element will not be
+displayed)<br>
+<br>
+<br>
+SP style, width, red, green, blue ; Selects Pen (border) to be used in drawing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PEN STYLES in SP command:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SOLID&nbsp;&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DASH&nbsp;&nbsp;&nbsp; 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NULL (transparent=no border displayed) 5<br>
+<br>
+<br>
+&nbsp; Example: for a 1 pixel wide, dashed, light gray pen use: SP
+0,1,192,192,192<br>
+<br>
+&nbsp;SB&nbsp; red, green, blue&nbsp;&nbsp;&nbsp;&nbsp; ; Selects Brush
+(interior)&nbsp; red, green, blue can range from 0 (least intensity) to 255 (max
+intensity)</font></p>
+
+<p><font color="#400040">&nbsp; Example: to select white interior of a closed
+polygon, use: SB 255, 255, 255<br>
+&nbsp; To select transparent interior use: SB -1,-1,-1<br>
+<br>
+<br>
+The SP and SB commands can also be used to alter the default colors of airspace
+segments.&nbsp;<br>
+For example, to change the default color of class C airspace from dark gray to
+magenta, use: '</font>SB 180,0,180'&nbsp; in the first class C segment
+definition, like this:</p>
+
+<p>AC C<br>
+AN RENO-C<br>
+AL SFC<br>
+AH 8400 ft<br>
+SB 180,0,180  *select MAGENTA as the default for class C<br>
+V X=39:29.9 N 119:46.1 W<br>
+DC 5<br>
+<font color="#400040"><br>
+</font></p>
+
+<p>&nbsp;</p>
+
+<p><big><font color="#400040">For a definition of OpenAir, see the listing below:</font></big></p>
+
+<p>******* <strong>OPEN AIR</strong> (tm) TERRAIN and AIRSPACE DESCRIPTION LANGUAGE
+*************<br>
+*&nbsp;&nbsp;&nbsp; Version 1.0<br>
+*&nbsp;&nbsp;&nbsp; December 10, 1998<br>
+*&nbsp;&nbsp;&nbsp; Updated October 15, 1999<br>
+*&nbsp;&nbsp;&nbsp; Send comments to jerryp@winpilot.com<br>
+*<br>
+*<br>
+*&nbsp; AIRSPACE related record types:<br>
+*&nbsp; ==============================<br>
+*<br>
+*&nbsp;<strong>AC&nbsp;class</strong>&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp; class =
+Airspace Class, see below:<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>R</strong> restricted<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>Q</strong> danger<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>P</strong> prohibited<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>A</strong> Class A<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>B</strong> Class B<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>C</strong> Class C<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>D</strong> Class D <br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>GP</strong> glider prohibited <br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>CTR</strong> CTR<br>
+*&nbsp;&nbsp;&nbsp;&nbsp; <strong>W</strong> Wave Window<br>
+*<br>
+*<br>
+*&nbsp;&nbsp;<strong>AN string</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+&nbsp;&nbsp;&nbsp; string = Airspace Name<br>
+*&nbsp; <strong>AH string</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+&nbsp;&nbsp;&nbsp; string = Airspace Ceiling<br>
+*&nbsp; <strong>AL string</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+&nbsp;&nbsp;&nbsp; string = Airspace Floor<br>
+*&nbsp; <strong>AT coordinate</strong>&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp; coordinate =
+Coordinate of where to place a name label on the map (optional)<br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; &nbsp;&nbsp;&nbsp; NOTE: there can be multiple AT records for a single airspace segment<br>
+*&nbsp;&nbsp;&nbsp; <br>
+*&nbsp;&nbsp;&nbsp; <br>
+*&nbsp;&nbsp;&nbsp; TERRAIN related record types (WinPilot version 1.130 and
+newer):<br>
+*&nbsp;&nbsp;&nbsp; ==============================<br>
+*<br>
+*&nbsp;&nbsp;&nbsp; <strong>TO</strong>&nbsp;&nbsp;&nbsp; {string}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; Declares Terrain Open Polygon; string = name (optional)<br>
+*&nbsp;&nbsp;&nbsp; <strong>TC</strong>&nbsp;&nbsp;&nbsp; {string}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; Declares Terrain Closed Polygon; string = name (optional)<br>
+*&nbsp;&nbsp;&nbsp; <strong>SP style, width, red, green, blue</strong>&nbsp;&nbsp;&nbsp;&nbsp;;
+Selects Pen to be used in drawing<br>
+*&nbsp;&nbsp;&nbsp; <strong>SB red, green, blue</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; ; Selects Brush to be used in drawing<br>
+*<br>
+* <br>
+*&nbsp;&nbsp;&nbsp; Record types common to both TERRAIN and AIRSPACE<br>
+*&nbsp;&nbsp;&nbsp; =================================================<br>
+*<br>
+*&nbsp;&nbsp;&nbsp; <strong>V x=n</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; &nbsp;&nbsp;&nbsp;
+Variable assignment.<br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; &nbsp;&nbsp;&nbsp; Currently the following variables are supported:<br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; &nbsp;&nbsp;&nbsp; D={+|-}&nbsp;&nbsp;&nbsp; sets direction for: DA and DB records<br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+'-' means counterclockwise direction; '+' is the default<br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+automatically reset to '+' at the begining of new airspace segment&nbsp;&nbsp;&nbsp; <br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; &nbsp;&nbsp;&nbsp; X=coordinate&nbsp;&nbsp;&nbsp; : sets the center for the following
+records: DA, DB, and DC&nbsp;&nbsp;&nbsp; <br>
+*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; &nbsp;&nbsp;&nbsp; W=number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : sets the width
+of an airway in nm (NYI)<br>
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Z=number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : sets zoom level at
+which the element becomes visible (WP version 1.130 and newer)<br>
+*<br>
+*&nbsp;&nbsp;&nbsp; <strong>DP coordinate</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; add polygon pointC<br>
+*&nbsp;&nbsp;&nbsp; <strong>DA radius, angleStart, angleEnd</strong>&nbsp;&nbsp;&nbsp; ;
+add an arc, angles in degrees, radius in nm (set center using V X=...)<br>
+*&nbsp;&nbsp;&nbsp; <strong>DB coordinate1, coordinate2</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; add an arc, from coordinate1 to coordinate2
+(set center using V X=...)<br>
+*&nbsp;&nbsp;&nbsp; <strong>DC radius </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;
+ draw a circle (center taken from the previous V X=...&nbsp; record, 
+radius in nm<br>
+*&nbsp;&nbsp;&nbsp; <strong>DY coordinate</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+; add a segment of an airway (NYI)<br>
+</p>
+
+<p>* SAMPLE OpenAir(tm) File (for Minden, NV):</p>
+
+<p><br>
+* Reno Class C<br>
+AC C<br>
+AN RENO-C<br>
+AL SFC<br>
+AH 8400 ft<br>
+V X=39:29.9 N 119:46.1 W<br>
+DC 5<br>
+<br>
+* Reno Class C<br>
+AC C<br>
+AN RENO<br>
+AL 7200 ft<br>
+AH 8400 ft<br>
+* this item will have 3 labels<br>
+AT 39:36.8 N 119:46.1W<br>
+AT 39:22.8 N 119:45.1W<br>
+AT 39:29.9 N 119:36.1W<br>
+V X=39:29.9 N 119:46.1W<br>
+DA 10,270,290<br>
+DA 7,290,320<br>
+DA 10,320,200<br>
+V D=-<br>
+DA 5,200,270<br>
+<br>
+<br>
+AC C<br>
+AN BEALE AFB<br>
+AL SFC<br>
+AH 4100 ft<br>
+V X=39:08.2 N 121:26.2 W<br>
+DC 5<br>
+<br>
+AC C<br>
+AN BEALE AFB<br>
+AL 2600ft<br>
+AH 4100 ft<br>
+AT 39:10.2 N 121:17.2 W<br>
+DA 10,9,130<br>
+V D=-<br>
+DA 5,130,9<br>
+<br>
+AC C<br>
+AN BEALE AFB<br>
+AL 1600ft<br>
+AH 4100 ft<br>
+AT 39:06.2 N 121:35.5 W<br>
+DA 10,130,9<br>
+V D=-5<br>
+DA 5,9,130<br>
+<br>
+<br>
+AC C<br>
+AN SACRAMENTO/MCCLEAN<br>
+AL 1600 ft<br>
+AH 4100 ft<br>
+V X=38:41.7 N 121:35.4 W<br>
+DA 10,164,40<br>
+V X=38:40.0 N 121:24.0 W<br>
+DA 10,344,219<br>
+<br>
+******************* RESTRICTED ********************<br>
+<br>
+<br>
+AC R<br>
+AN R 4812 4804<br>
+AL 0<br>
+AH FL 180<br>
+V X=39:13:00 N 118:13:00 W<br>
+DA 5,0,178<br>
+V D=-<br>
+V X=39:10:20 N 118:37:00 W<br>
+DA 5,175,355<br>
+<br>
+AC R<br>
+AN R-4803 S<br>
+AL 0<br>
+AH FL180<br>
+V X=39:20:00 N 118:52:00 W<br>
+DA 3,27,270<br>
+DP 39:35:00 N 118:59:20 W<br>
+DP 39:36:00 N 118:53:30 W<br>
+<br>
+AC R<br>
+AN R-4806 W<br>
+AL 0<br>
+AH UNLIM <br>
+DP 36:41:00 N 115:56:10 W&nbsp;&nbsp;&nbsp; c29<br>
+DP 37:06:00 N 115:56:10 W&nbsp;&nbsp;&nbsp; c30<br>
+DP 37:06:00 N 115:35:00 W&nbsp;&nbsp;&nbsp; c31<br>
+DP 37:16:55 N 115:35:00 W&nbsp;&nbsp;&nbsp; c32<br>
+<br>
+DP 37:16:55 N 115:18:10 W&nbsp;&nbsp;&nbsp; c34<br>
+DP 36:38:08 N 115:18:10 W&nbsp;&nbsp;&nbsp; c35<br>
+DP 36:25:40 N 115:18:10 W&nbsp;&nbsp;&nbsp; c36<br>
+DP 36:25:40 N 115:23:20 W&nbsp;&nbsp;&nbsp; c37<br>
+DP 36:35:00 N 115:37:00 W&nbsp;&nbsp;&nbsp; c38<br>
+DP 36:35:00 N 115:53:00 W&nbsp;&nbsp;&nbsp; c39<br>
+DP 36:35:45 N 115:56:10 W&nbsp;&nbsp;&nbsp; c40<br>
+<br>
+<br>
+AC R<br>
+AN R-4806 E<br>
+AL 100 Agl<br>
+AH UNLIM <br>
+DP 37:16:55 N 115:18:10 W&nbsp;&nbsp;&nbsp; c34<br>
+DP 36:38:08 N 115:18:10 W&nbsp;&nbsp;&nbsp; c35<br>
+<br>
+DP 36:47:40 N 115:07:00 W&nbsp;&nbsp;&nbsp; c41<br>
+DP 37:11:45 N 115:07:00 W&nbsp;&nbsp;&nbsp; c42<br>
+DP 37:16:55 N 115:11:00 W&nbsp;&nbsp;&nbsp; c43<br>
+<br>
+<br>
+AC R<br>
+AN R-4807 A<br>
+AL 0<br>
+AH UNLIM (Mon-Fri)<br>
+AT 37:28:00 N 116:36:00 W <br>
+DP 37:53:00 N 117:06:00 W <br>
+DP 37:53:00 N 116:55:30 W&nbsp;&nbsp;&nbsp; c1<br>
+DP 37:47:00 N 116:55:30 W&nbsp;&nbsp;&nbsp; c2<br>
+DP 37:33:00 N 116:43:20 W&nbsp;&nbsp;&nbsp; c3<br>
+DP 37:33:00 N 116:26:20 W&nbsp;&nbsp;&nbsp; c4<br>
+DP 37:53:00 N 116:26:20 W&nbsp;&nbsp;&nbsp; c5<br>
+DP 37:53:00 N 116:11:00 W&nbsp;&nbsp;&nbsp; <br>
+DP 37:42:00 N 116:11:00 W&nbsp;&nbsp;&nbsp; <br>
+DP 37:42:00 N 115:53:00 W&nbsp;&nbsp;&nbsp; c6<br>
+DP 37:33:00 N 115:53:00 W&nbsp;&nbsp;&nbsp; c7<br>
+DP 37:33:00 N 115:48:00 W&nbsp;&nbsp;&nbsp; c8<br>
+DP 37:28:00 N 115:48:00 W&nbsp;&nbsp;&nbsp; c9<br>
+DP 37:28:00 N 116:00:00 W&nbsp;&nbsp;&nbsp; c10<br>
+DP 37:16:00 N 116:00:00 W&nbsp;&nbsp;&nbsp; c11<br>
+DP 37:16:00 N 116:11:10 W&nbsp;&nbsp;&nbsp; c12<br>
+DP 37:20:00 N 116:11:00 W&nbsp;&nbsp;&nbsp; c13<br>
+DP 37:23:00 N 116:17:15 W&nbsp;&nbsp;&nbsp; c14<br>
+DP 37:23:00 N 116:22:15 W&nbsp;&nbsp;&nbsp; c15<br>
+DP 37:21:00 N 116:27:00 W&nbsp;&nbsp;&nbsp; c16<br>
+DP 37:21:00 N 116:34:10 W&nbsp;&nbsp;&nbsp; c17<br>
+DP 37:16:00 N 116:31:00 W&nbsp;&nbsp;&nbsp; c18<br>
+DP 37:08:00 N 116:27:00 W&nbsp;&nbsp;&nbsp; c19<br>
+DP 36:55:00 N 116:27:00 W&nbsp;&nbsp;&nbsp; c20<br>
+DP 36:55:00 N 116:34:00 W&nbsp;&nbsp;&nbsp; c21<br>
+DP 36:51:00 N 116:34:00 W&nbsp;&nbsp;&nbsp; c22<br>
+DP 37:26:25 N 117:04:45 W&nbsp;&nbsp;&nbsp; c23<br>
+DP 37:32:30 N 117:05:55 W&nbsp;&nbsp;&nbsp; c24<br>
+DP 37:53:00 N 117:06:00 W&nbsp;&nbsp;&nbsp; c25<br>
+<br>
+<br>
+AC R<br>
+AN R-4807 B<br>
+AL 0<br>
+AH UNLIMITED<br>
+DP 37:16:00 N 116:11:10 W&nbsp;&nbsp;&nbsp; c12<br>
+DP 37:20:00 N 116:11:00 W&nbsp;&nbsp;&nbsp; c13<br>
+DP 37:23:00 N 116:17:15 W&nbsp;&nbsp;&nbsp; c14<br>
+DP 37:23:00 N 116:22:15 W&nbsp;&nbsp;&nbsp; c15<br>
+DP 37:21:00 N 116:27:00 W&nbsp;&nbsp;&nbsp; c16<br>
+DP 37:21:00 N 116:34:10 W&nbsp;&nbsp;&nbsp; c17<br>
+DP 37:16:00 N 116:31:00 W&nbsp;&nbsp;&nbsp; c18<br>
+<br>
+<br>
+AC R<br>
+AN R-4808 N<br>
+AL 0<br>
+AH UNLIMITED<br>
+DP 37:28:00 N 115:48:00 W&nbsp;&nbsp;&nbsp; c9<br>
+DP 37:28:00 N 116:00:00 W&nbsp;&nbsp;&nbsp; c10<br>
+DP 37:16:00 N 116:00:00 W&nbsp;&nbsp;&nbsp; c11<br>
+DP 37:16:00 N 116:11:10 W&nbsp;&nbsp;&nbsp; c12<br>
+DP 37:16:00 N 116:31:00 W&nbsp;&nbsp;&nbsp; c18<br>
+DP 37:08:00 N 116:27:00 W&nbsp;&nbsp;&nbsp; c19<br>
+DP 36:55:00 N 116:27:00 W&nbsp;&nbsp;&nbsp; c20<br>
+DP 36:55:00 N 116:34:00 W&nbsp;&nbsp;&nbsp; c21<br>
+DP 36:51:00 N 116:34:00 W&nbsp;&nbsp;&nbsp; c22<br>
+<br>
+DP 36:51:00 N 116:26:45 W&nbsp;&nbsp;&nbsp; c26<br>
+DP 36:46:00 N 116:26:45 W&nbsp;&nbsp;&nbsp; c27<br>
+DP 36:41:00 N 116:15:00 W&nbsp;&nbsp;&nbsp; c28<br>
+DP 36:41:00 N 115:56:10 W&nbsp;&nbsp;&nbsp; c29<br>
+DP 37:06:00 N 115:56:10 W&nbsp;&nbsp;&nbsp; c30<br>
+DP 37:06:00 N 115:35:00 W&nbsp;&nbsp;&nbsp; c31<br>
+DP 37:16:55 N 115:35:00 W&nbsp;&nbsp;&nbsp; c32<br>
+DP 37:28:00 N 115:35:00 W&nbsp;&nbsp;&nbsp; c33<br>
+<br>
+<br>
+AC R<br>
+AN R-4808 S<br>
+AL 0<br>
+AH UNLIMITED<br>
+DP 36:46:00 N 116:26:45 W&nbsp;&nbsp;&nbsp; c27<br>
+DP 36:41:00 N 116:15:00 W&nbsp;&nbsp;&nbsp; c28<br>
+DP 36:41:00 N 116:26:45 W&nbsp;&nbsp;&nbsp; <br>
+<br>
+<br>
+AC R<br>
+AN R-4809<br>
+AL 0<br>
+AH UNLIMITED<br>
+DP 37:53:00 N 116:55:30 W&nbsp;&nbsp;&nbsp; c1<br>
+DP 37:47:00 N 116:55:30 W&nbsp;&nbsp;&nbsp; c2<br>
+DP 37:33:00 N 116:43:20 W&nbsp;&nbsp;&nbsp; c3<br>
+DP 37:33:00 N 116:26:20 W&nbsp;&nbsp;&nbsp; c4<br>
+DP 37:53:00 N 116:26:20 W&nbsp;&nbsp;&nbsp; c5<br>
+<br>
+<br>
+AC R<br>
+AN R-4810<br>
+AL 0<br>
+AH 17000ft<br>
+V X=39:10:20 N 118:37:00 W<br>
+DA 5,293,215<br>
+V X=39:09:00 N 118:42:00 W<br>
+DA 3,159,347<br>
+<br>
+AC R<br>
+AN R-4811<br>
+AL 0<br>
+AH 15000ft (Mo-Fri)<br>
+V X=38:14:40 N 118:38:40 W <br>
+DC 1.5<br>
+<br>
+AC R<br>
+AN R-4813<br>
+AL 0<br>
+AH FL180<br>
+V X=39:51:20 N 118:21:00 W<br>
+DA 13,165,255<br>
+DP 39:51:15 N 118:37:35 W<br>
+DP 40:01:20 N 118:15:00 W<br>
+DP 40:01:20 N 118:00:55 W<br>
+DP 39:58:20 N 118:00:55 W<br>
+<br>
+AC R<br>
+AN R-4816S<br>
+AL 500 ft agl<br>
+AH FL180<br>
+DP 39:17:20 N 118:20:30 W<br>
+DP 39:18:20 N 117:59:00 W<br>
+DP 39:21:00 N 117:55:00 W<br>
+DP 39:24:30 N 117:52:00 W<br>
+DP 39:26:50 N 117:51:08 W<br>
+<br>
+DP 39:30:00 N 117:49:00 W<br>
+DP 39:34:00 N 117:41:20 W<br>
+DP 39:34:00 N 118:12:30 W<br>
+DP 39:30:00 N 118:15:18 W<br>
+<br>
+<br>
+AC R<br>
+AN R-4816N<br>
+AL 1500 ft agl<br>
+AH FL180<br>
+DP 39:34:00 N 118:12:30 W<br>
+DP 39:51:20 N 117:59:55 W<br>
+DP 39:51:20 N 117:31:00 W<br>
+DP 39:34:00 N 117:40:00 W<br>
+<br>
+<br>
+<br>
+************* ALERT ************<br>
+AC R<br>
+AN A-481<br>
+AL 7000ft<br>
+AH 17000ft<br>
+AT 36:21.0 N 115:22.0 W<br>
+DP 36:14.2 N 115:02.0 W<br>
+V X=36:14.2 N 115:02.0 W<br>
+DA 30,274,307<br>
+<br>
+<br>
+<br>
+************* CLASS D ***********<br>
+<br>
+AC D<br>
+AN NAS-FALLON<br>
+AL 0<br>
+AH 6400ft<br>
+V X=39:25.0 N 118:42.0 W<br>
+DC 6<br>
+<br>
+AC D<br>
+AN LAKE TAHOE<br>
+AL 0<br>
+AH 8800ft<br>
+V X=38:53.6 N 119:59.7 W<br>
+DC 5<br>
+<br>
+<br>
+************* Wave Windows ***********<br>
+AC W<br>
+AN Minden West<br>
+AH Ask on 122.8<br>
+AL 18000 ft<br>
+DP 39:04:00 N 119:57:00 W <br>
+DP 39:04:00 N 119:41:00 W <br>
+DP 38:42:00 N 119:38:00 W <br>
+DP 38:42:00 N 119:57:00 W
+</p><p>&nbsp;</p><p><strong>=================================================<br>
+</strong>
+</p><p><strong>2018 : Update : Extensions Suggested by the Naviter Company:</strong></p><h1 dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2765" style="margin: 10pt 0px 0pt; padding: 0px; font-weight: 700; text-align: start; display: block; font-size: 2em; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-style: normal; font-variant: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_2983" style="font-size: 16pt;">Reason</span></h1>
+<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2986" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_2985" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+The Open Air format is the current de-facto standard for editing airspace data 
+for glider pilots worldwide</span></p>
+<h1 dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3006" style="margin: 10pt 0px 0pt; padding: 0px; font-weight: 700; text-align: start; display: block; font-size: 2em; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-style: normal; font-variant: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_4193" style="font-size: 16pt;">
+Objective</span></h1>
+<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2982" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_2981" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+Create a new airspace format type which can easily be edited manually by pilots 
+worldwide, possibly even use the already existing software.</span></p>
+<br style="color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" clear="none">
+<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2988" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_2987" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+The new format needs to be</span></p>
+<ul id="yui_3_16_0_ym19_1_1537292453036_2768" style="margin: 0pt 0px; padding: 0px 40px; list-style: disc; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4196" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4195" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Simple</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4178" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4177" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Human readable</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2767" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2766" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span id="yui_3_16_0_ym19_1_1537292453036_2980" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Editable in Notepad </span>
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	(this makes it hard to create controlled copies)</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2770" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2769" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span id="yui_3_16_0_ym19_1_1537292453036_2979" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Extendable when new needs appear (and therefore XML?)</span></p>
+	</li>
+</ul>
+<h1 dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2990" style="margin: 10pt 0px 0pt; padding: 0px; font-weight: 700; text-align: start; display: block; font-size: 2em; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-style: normal; font-variant: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_2989" style="font-size: 16pt;">Steps 
+to solution</span></h1>
+<ul id="yui_3_16_0_ym19_1_1537292453036_4197" style="margin: 0pt 0px; padding: 0px 40px; list-style: disc; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4168" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4167" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Be able to read AIXM format</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2773" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2772" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span id="yui_3_16_0_ym19_1_1537292453036_2771" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Define parameters which are interesting for gliding / paragliding / hang 
+	gliding:</span></p>
+	<ul id="yui_3_16_0_ym19_1_1537292453036_4198" style="margin: 0pt 0px; padding: 0px 40px; list-style: circle; display: block;">
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2750" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2749" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		Define required airspace classes</span></p>
+		<ul id="yui_3_16_0_ym19_1_1537292453036_2780" style="margin: 0pt 0px; padding: 0px 40px; list-style: square; display: block;">
+			<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2779" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+			<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2778" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span id="yui_3_16_0_ym19_1_1537292453036_2777" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+			A,B,C,D,E,F,G</span><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"> 
+			(independent from airspace types)</span><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><span class="yiv5320717998gmail-Apple-tab-span" style="white-space: pre-wrap;">
+			</span></span></p>
+			</li>
+		</ul>
+		</li>
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4199" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4200" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span id="yui_3_16_0_ym19_1_1537292453036_2991" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		Define required airspace types (edit the table below):</span></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<div dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2606" style="text-align: start; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-left: 0pt; background-color: rgb(255, 255, 255);">
+	<table id="yui_3_16_0_ym19_1_1537292453036_2605" style="margin: 0px; padding: 0px; display: table; border-collapse: collapse; word-break: break-word; border: none;">
+		<colgroup style="border-left-width: 0px;" span="1">
+			<col width="110" span="1"><col width="363" span="1">
+			<col width="127" span="1"><col width="46" span="1">
+		</colgroup>
+		<tbody id="yui_3_16_0_ym19_1_1537292453036_2604" style="width: 646px;">
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2776" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_3016" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3015" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_3017" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Abbreviation</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2775" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2774" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Description</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Open Air “AY”</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				6.1</span></p>
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				CTR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Control Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				CTR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_3009" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_3008" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3007" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_3014" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Restricted Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				R</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2748" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2747" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2783" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2782" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Prohibited Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				P</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Danger Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Q</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2993" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2992" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2994" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Glider Sector</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				W, GSEC</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2996" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2995" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Airway</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				AWY</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2978" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2977" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2976" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2975" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Transponder Mandatory Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TMZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Radio Mandatory Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				RMZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Military Terminal Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				MTMA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Y</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2603" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2602" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2601" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				NOTAM</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				N</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2785" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_3010" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3011" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TFR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2784" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2787" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2786" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Temporary Flight Restriction</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				N</span></p>
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2790" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				ADA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2789" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2788" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Advisory Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				ADIZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Air Defense Identification Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2836" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				C</span><span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">T</span><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">A</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2835" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Control Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_3013" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				FIR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_3012" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Flight Information Region</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2760" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TMA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2759" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2758" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2757" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Terminal Manoeuvring Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2756" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				DFIR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2755" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2754" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2753" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Delegated FIR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_3003" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2831" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TIZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2830" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2829" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Traffic Information Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2798" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TIA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2797" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3001" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Traffic Information Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2796" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				SRZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2795" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2794" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Special Rules Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_3000" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				ATZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2999" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2998" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Aerodrome Traffic Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				MATZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Military Aerodrome Traffic Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2745" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				FISA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2744" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Flight Information Service Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2793" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				T</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2792" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2791" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Temporary Reserved</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2619" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2618" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2617" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				MBZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2997" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Mandatory Broadcast Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2837" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2828" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				ASR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Aerial Sporting and Recreation Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2827" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2972" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				COMP</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2971" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Competition boundary</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TRZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Transponder Recommended Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				VFRR</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				VFR Route</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				RTZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Radio/Transponder Mandatory zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				PARA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Parachute jumping area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				LFZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Low Flying Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2808" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				CFZ</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2807" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2809" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_4139" style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Common Frequency Zone</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2806" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				MOA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2805" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2974" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2973" style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Military Operating Area</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2826" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2804" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TSA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2803" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2810" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Temporary segregated airspace (from Poland)</span></p>
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2615" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				TRA</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2614" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2613" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_2612" style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Temporary reserved airspace (from Poland)</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2820" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+			<tr id="yui_3_16_0_ym19_1_1537292453036_2818" style="display: table-row; vertical-align: inherit; min-height: 0pt;">
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2817" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2819" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.2;">
+				<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: italic; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+				Add suggestions here</span></p>
+				</td>
+				<td colspan="1" rowspan="1" id="yui_3_16_0_ym19_1_1537292453036_2821" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+				<td colspan="1" rowspan="1" style="display: table-cell; border-spacing: 2px; border: 1pt solid rgb(0, 0, 0); vertical-align: top; padding: 5pt;">
+				<br clear="none">
+				</td>
+			</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p><ul id="yui_3_16_0_ym19_1_1537292453036_2611" style="margin: 0pt 0px; padding: 0px 40px; list-style: disc; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	<ul id="yui_3_16_0_ym19_1_1537292453036_2814" style="margin: 0pt 0px; padding: 0px 40px; list-style: circle; display: block;">
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2823" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2822" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span id="yui_3_16_0_ym19_1_1537292453036_4246" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		Frequency field</span></p>
+		</li>
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2816" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2815" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span id="yui_3_16_0_ym19_1_1537292453036_4264" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		Date / Time when an airspace is active</span></p>
+		</li>
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2813" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2812" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span id="yui_3_16_0_ym19_1_1537292453036_2811" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		NOTAM airspace type (could already be implicitly defined above)</span></p>
+		</li>
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3029" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3028" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		Multiple lower and upper limits</span></p>
+		</li>
+		<li dir="ltr" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span style="font-size: 11pt; font-family: Arial; color: rgb(166, 77, 121); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+		able to use defined radius in arc´s </span></p>
+		</li>
+	</ul>
+	<li dir="ltr" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Publish new airspace format and make it available to everybody</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4253" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4252" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span id="yui_3_16_0_ym19_1_1537292453036_4251" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Create a web-based platform (Cloud) for storage and download</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2610" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_2609" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span id="yui_3_16_0_ym19_1_1537292453036_2608" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	Put the responsibility for knowing which airspace is active to the pilot
+	</span>
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 255); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	(which implies that more airspace management functions will be introduced in 
+	SeeYou)</span></p>
+	</li>
+</ul>
+<br style="color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" clear="none">
+<h1 dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3030" style="margin: 10pt 0px 0pt; padding: 0px; font-weight: 700; text-align: start; display: block; font-size: 2em; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-style: normal; font-variant: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 1.38; background-color: rgb(255, 255, 255);">
+<span id="yui_3_16_0_ym19_1_1537292453036_3049" style="font-size: 16pt;">
+Additional OpenAir fields (differences from original):</span></h1>
+<br style="color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" clear="none">
+<ul id="yui_3_16_0_ym19_1_1537292453036_3022" style="margin: 0pt 0px; padding: 0px 40px; list-style: disc; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3033" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3032" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span id="yui_3_16_0_ym19_1_1537292453036_3031" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	AY = Airspace Type (extends AC which should now only be used for class)</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3027" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3026" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	AF = </span>
+	<span id="yui_3_16_0_ym19_1_1537292453036_3025" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+	Frequency of the controlling ATC-station or other authority in that 
+	particular airspace</span></p>
+	</li>
+	<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3040" style="text-align: start; display: list-item; list-style-type: disc; font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3039" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+	<span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">
+	AG = C</span><span id="yui_3_16_0_ym19_1_1537292453036_3038" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">all-sign 
+	for this station is provided.</span></p>
+	<ul id="yui_3_16_0_ym19_1_1537292453036_3021" style="margin: 0pt 0px; padding: 0px 40px; list-style: circle; display: block;">
+		<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4274" style="text-align: start; display: list-item; list-style-type: circle; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+		<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4273" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+		<span id="yui_3_16_0_ym19_1_1537292453036_4272" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+		Example for AF and AG:</span></p>
+		<ul id="yui_3_16_0_ym19_1_1537292453036_3020" style="margin: 0pt 0px; padding: 0px 40px; list-style: square; display: block;">
+			<li dir="ltr" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			AC R</span></p>
+			</li>
+			<li dir="ltr" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			AN EHR 3</span></p>
+			</li>
+			<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4255" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4254" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span id="yui_3_16_0_ym19_1_1537292453036_4271" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			AH 3000 MSL</span></p>
+			</li>
+			<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3024" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3023" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			AL GND</span></p>
+			</li>
+			<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4270" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4269" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span id="yui_3_16_0_ym19_1_1537292453036_4268" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			AF 132.350 </span></p>
+			</li>
+			<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4263" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4262" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span id="yui_3_16_0_ym19_1_1537292453036_4266" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			AG Dutch Mil</span></p>
+			</li>
+			<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3019" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_3018" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			<span id="yui_3_16_0_ym19_1_1537292453036_3048" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+			DP 52:23:00 N 005:50:00 E</span></p>
+			<ul id="yui_3_16_0_ym19_1_1537292453036_4340" style="margin: 0pt 0px; padding: 0px 40px; list-style: square; display: block; color: rgb(0, 0, 0); font-family: tahoma, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+				<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4257" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4256" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_4267" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+				DP 52:21:30 N 005:52:30 E</span></p>
+				</li>
+				<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4259" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4258" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_4339" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+				DP 52:24:30 N 006:01:00 E</span></p>
+				</li>
+				<li dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4335" style="text-align: start; display: list-item; list-style-type: square; font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+				<p dir="ltr" id="yui_3_16_0_ym19_1_1537292453036_4334" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+				<span id="yui_3_16_0_ym19_1_1537292453036_4333" style="font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; background-color: rgb(255, 255, 255);">
+				DP 52:27:00 N 006:00:00 E</span></p>
+				</li>
+			</ul>
+			<p dir="ltr" style="margin: 0pt 0px; padding: 0px; text-align: start; display: block; line-height: 1.38;">
+			&nbsp;</p>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>
+<br>
+
+
+</p></big></body></html>

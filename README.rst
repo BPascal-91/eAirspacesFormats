@@ -1,4 +1,4 @@
-|imgOpenair10| |imgOpenairBeta| |imgFaf10| |imgAixm45| |imgAixm51| |imgOfmx00|
+|imgOpenair100| |imgOpenair101| |imgOpenair102| |imgOpenairBeta| |imgFaf10| |imgAixm45| |imgAixm51| |imgOfmx00|
 
 `eAirspacesFormats`_ - Electronic Airspaces Formats
 ====================================================
@@ -29,7 +29,7 @@ Formatismes
 
 `Openair`_ Format - Open Airspace and terrain description language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-|imgOpenair10| |imgOpenairBeta|
+|imgOpenair100| |imgOpenair101| |imgOpenair102| |imgOpenairBeta|
 Un format ouvert pour l'encodage de données aéronautiques ; basé sur un format de fichier TEXTE (TEXT-file format) ; optimisé et utilisé par de nombreux logiciels...
 Description complète -> `Openair`_
 
@@ -92,12 +92,18 @@ Crédit
 
 
 
-.. |imgOpenair10| image:: openair/res/openair_v1.0.0.svg
-   :target: `OpenAir`_
-   :alt: `OpenAir`_
-.. |imgOpenairBeta| image:: openair/res/openair_betaVersion.svg
-   :target: `Openair`_
-   :alt: `Openair`_
+.. |imgOpenair100| image:: res/openair_v1.0.0.svg
+	:target: `Openair Standard`_
+	:alt: `OpenAir`_ 1.0.0
+.. |imgOpenair101| image:: res/openair_v1.0.1.svg
+	:target: `Openair v1.0.1`_
+	:alt: `OpenAir`_ v1.0.1
+.. |imgOpenair102| image:: res/openair_v1.0.2.svg
+	:target: `Openair v1.0.2`_
+	:alt: `OpenAir`_ v1.0.2
+.. |imgOpenairBeta| image:: res/openair_betaVersion.svg
+	:target: `Openair`_
+	:alt: `Openair`_ beta
 .. |imgFaf10| image:: faf/res/faf_v1.0.0.svg
    :target: `FAF`_
    :alt: `FAF`_
