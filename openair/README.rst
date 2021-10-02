@@ -26,6 +26,7 @@ Vous trouverez ci-dessous ; l'historique des évolutions ainsi que la descriptio
 
 Exemples de contenus dans la version initiale |imgOpenair100|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	.. code::
 	
 		*** Tracé d'un rectangle, coordonnées précisées avec une taille-fixe
@@ -76,6 +77,7 @@ Exemples de contenus dans la version initiale |imgOpenair100|
 
 Exemples des mêmes contenus dans la nouvelle version |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	.. code::
 	
 		*** Tracé d'un rectangle, taille des coordonnées optimisée + ajout des nouvelles informations (volontairement positionnées en commentaire ('*' en entête) afin d'assurer une 'compatibilité ascendante' pour les anciens-outillages...)
@@ -195,6 +197,7 @@ Documentation
 			- **<End-time>** - The NOTAM end
 			- **<Schedule>** - The NOTAM schedule
 			- **<Text>** - The NOTAM text
+		
 		.. code::
 		
 			*** Here's an example of a NOTAM exported to XCSoar:
@@ -213,6 +216,7 @@ Documentation
 			- **<SeeNOTAM>** - Affichage de l'information contenue dans le nouveau tag '*ASeeNOTAM' (décrit plus bas...)
 			- **<Upper>** (Ceiling) - Affichage optionnel de la double-référence-altimétrique du plafond de la zone
 			- **<Lower>** (Floor) - Affichage optionnel de la double-référence-altimétrique du plancher de la zone 
+
 		.. code::
 		
 			*** Quelques exemples
@@ -227,6 +231,7 @@ Documentation
 
 * **AF - Frequency Radio** - Fréquence radio
 	1. |imgOpenair102| Frequency of the controlling ATC-station or other authority in that particular airspace
+
 		.. code::
 		
 			*** Un exemple concret
@@ -244,6 +249,7 @@ Documentation
 			
 	2. |imgOpenairBeta| Aucun changement proposé mais juste l'anonce d'un point d'attention MAJEUR !
 		- /!\\ Warning - Ne jamais utiliser la référence-altimétrique **<RefAlti>**='ASFC' car plusieurs appreils (y compris XCsoar) ne savent pas interpréter cette codification ! .. 'ASFC' n'est pas une codification référencée par l'OACI (et pourtant souvent utilisé par le SIA-France...). En remplacement, vous devez systématiquement utiliser 'AGL', ainsi ce sera compatible avec tous les appareils ;-)
+
 		.. code::
 		
 			*** Quelques exemples concrets
@@ -268,6 +274,7 @@ Documentation
 	Utiliser le même formalisme que les éléments **AL & AH** (présenté ci-dessus)
 	
 	Deux cas concrets: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
+
 		.. code::
 		
 			*** Exemple concret
