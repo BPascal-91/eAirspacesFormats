@@ -173,9 +173,10 @@ Documentation
 * **AY - Airspace Type** - Typologie des zones aériennes
 	1. |imgOpenair102| Liste initiale ['CTR'=Control-Traffic-Region, 'AWY'=Airway (corridor), 'TMZ'=Transponder-Mandatory-Zone, 'RMZ'=Radio-Mandatory-Zone, 'MTMA'=Military-Terminal-Zone]
 	2. |imgOpenairBeta| Liste complétée par ['ADIZ'=Air-Defense-Identification-Zone, 'AER'=Radio-controlled-model-flying, 'AMA'=Minimum-Altitude-Area, 'ATZ'=Aerodrome-Traffic-Zone, 'ATZ/RMZ'=Aerodrome-Traffic-Zone/Radio-Mandatory-Zone, 'BAL'=Hot-air-BALloons (BALLOON, BALLOONING), 'CBA'=Cross-Boerder-Area, 'CTA'=ConTrol-Area, 'FFVL-Prot'=FFVL-Protocole (Paragliding/Hangliding/Kite), 'FFVP-Prot'=FFVP-Protocole (Glider), 'FIR'=Flight-Information-Region, 'FIS'=Flight-Information-Service,'LTA'=Lower-Trafic-Area, 'NATURE'=Natural-reserve, 'OCA'=Oceanic-Control-Area, 'PART'=Part-of-an-airspace (used in airspace aggregations), 'PJE'=Parachute-Jumping-Exercise, 'POLITICAL'=Political/administrative area, 'PRN'=Police-rescue-activity-or-nature-reserve-management-operations, 'PROTECT'=Airspace-protected-from-specific-air-traffic, 'RAS'=Regulated Airspace (not otherwise covered), 'RTBA'=Reseau-Tres-Basse-Altitude, 'SECTOR'=Control-Sector, 'SIV'=Service-d'Information-de-Vol, 'SPORT'=Aerial-sporting, 'SUR'=Point-d'attention (Prisons)'TMA'=Terminal-Manoeuvring-Area, 'TRA'=Temporary-Reserved-Area, 'TRPLA'=Treuil-Planeurs, 'TRVL'=Treuil-Vol-Libre, 'TSA'=Temporary-Segregated-Area, 'UIR'=Upper-Flight-Information-Region, 'UTA'=Upper-Control-Area, 'ZIT'=Zone-Interdite-Temporaire, 'ZRT'=Zone-Règlementé-Temporaire, 'ZDT'=Zone-Danger-Temporaire, 'ZSM'=Zone-de-Sensibilité-Majeure (or 'MSZ' Major-Sensibility-Zone)]
+	
 		.. code::
 		
-			\*\*\* Exemple concret
+			*** Exemple concret
 				AC R
 				AY RMZ
 				AN RMZ MORLAIX Twr(118.500)
