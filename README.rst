@@ -92,16 +92,16 @@ Crédit
 
 
 
-.. |imgOpenair100| image:: res/openair_v1.0.0.svg
+.. |imgOpenair100| image:: openair/res/openair_v1.0.0.svg
 	:target: `Openair Standard`_
 	:alt: `OpenAir`_ 1.0.0
-.. |imgOpenair101| image:: res/openair_v1.0.1.svg
+.. |imgOpenair101| image:: openair/res/openair_v1.0.1.svg
 	:target: `Openair v1.0.1`_
 	:alt: `OpenAir`_ v1.0.1
-.. |imgOpenair102| image:: res/openair_v1.0.2.svg
+.. |imgOpenair102| image:: openair/res/openair_v1.0.2.svg
 	:target: `Openair v1.0.2`_
 	:alt: `OpenAir`_ v1.0.2
-.. |imgOpenairBeta| image:: res/openair_betaVersion.svg
+.. |imgOpenairBeta| image:: openair/res/openair_betaVersion.svg
 	:target: `Openair`_
 	:alt: `Openair`_ beta
 .. |imgFaf10| image:: faf/res/faf_v1.0.0.svg
