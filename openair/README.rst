@@ -164,8 +164,8 @@ Documentation
 `Openair v1.0.1`_ - Une première extension du formalisme |imgOpenair101|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `Openair v1.0.2`_ - Une seconde extension du formalisme |imgOpenair102|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	(Nota. Pour plus de précision chercher dans la page '2018 : Update : Extensions Suggested by the Naviter Company')
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `Openair Extended`_ - Version actuelle étandue avec historique des évolutions |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * **AC - Airspace Class** - Classification des zones aériennes
