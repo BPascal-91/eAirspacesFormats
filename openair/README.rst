@@ -307,6 +307,7 @@ Documentation
 	1. |imgOpenairBeta| Ces nouvelles données permettent à l'usager de contrôler l'estimation d'un écart vertical résiduel entre son altitude GPS et la zone concernée
 		
 		**\*AAlt ["<Floor-desc>/<Ceiling-desc>", "<Floor-metter>/<Ceiling-metter>", ["<ffExt>=Yes"]]**
+
 			- **<Floor-desc>/<Ceiling-desc>** - Le premier élément du tableau contient la description textuelle des altitudes de Plancher/Plafond
 			- **<Floor-metter>/<Ceiling-metter>** - Le second élément du tableau présente les altitudes limites Plancher/Plafond décritent en mètres avec une référence AMSL (niveau moyen de la mer; même pour une référence altimétrique initialement donnée par une hauteur-sol 'AGL' ou 'ASFC')
 			- **[<ffExt>=Yes]** - Optional FreeFligth-Extended - Le troisième élément du tableau est optionnel. Il présente un indicateur binaire qui décrit si le Plancher de la zone est fixé au dessus du FL115
