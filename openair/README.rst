@@ -312,6 +312,7 @@ Documentation
 		- **[<ffExt>=Yes]** - Optional FreeFligth-Extended - Le troisième élément du tableau est optionnel. Il présente un indicateur binaire qui décrit si le Plancher de la zone est fixé au dessus du FL115
 	
 		.. code::
+		
 			*** Quelques exemples concrets
 			*AAlt ["SFC/1000FT ASFC", "0m/1981m"]
 			*AAlt ["1000FT AMSL/3000FT AMSL", "304m/914m"]
