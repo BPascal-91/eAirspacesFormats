@@ -165,7 +165,7 @@ Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `Openair v1.0.2`_ - Une seconde extension du formalisme |imgOpenair102|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	(Nota. Pour plus de précision chercher dans la page '2018 : Update : Extensions Suggested by the Naviter Company')
+	(Nota. Pour plus de précision sur cette version v1.0.2 ; chercher dans la page '2018 : Update : Extensions Suggested by the Naviter Company')
 `Openair Extended`_ - Version actuelle étandue avec historique des évolutions |imgOpenairBeta|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * **AC - Airspace Class** - Classification des zones aériennes
@@ -304,19 +304,20 @@ Documentation
 			*AL2 1000FT AGL
 
 * **\*AAlt - Description of Floor / Ceiling altitudes** - Description des altitudes Plancher/Plafond
-	1. |imgOpenairBeta| Ces nouvelles données permettent à l'usager de contrôler l'estimation d'un écart vertical résiduel entre son altitude GPS et la zone concernée.
+	1. |imgOpenairBeta| Ces nouvelles données permettent à l'usager de contrôler l'estimation d'un écart vertical résiduel entre son altitude GPS et la zone concernée
+		
 		**\*AAlt ["<Floor-desc>/<Ceiling-desc>", "<Floor-metter>/<Ceiling-metter>", ["<ffExt>=Yes"]]**
-			- **<Floor-desc>/<Ceiling-desc>** - Le premier élément du tableau contient la description textuelle des altitudes de Plancher/Plafond.
-			- **<Floor-metter>/<Ceiling-metter>** - Le second élément du tableau présente les altitudes limites Plancher/Plafond décritent en mètres avec une référence AMSL (niveau moyen de la mer; même pour une référence altimétrique initialement donnée par une hauteur-sol 'AGL' ou 'ASFC').
-			- **[<ffExt>=Yes]** - Optional FreeFligth-Extended - Le troisième élément du tableau est optionnel. Il présente un indicateur binaire qui décrit si le Plancher de la zone est fixé au dessus du FL115.
+			- **<Floor-desc>/<Ceiling-desc>** - Le premier élément du tableau contient la description textuelle des altitudes de Plancher/Plafond
+			- **<Floor-metter>/<Ceiling-metter>** - Le second élément du tableau présente les altitudes limites Plancher/Plafond décritent en mètres avec une référence AMSL (niveau moyen de la mer; même pour une référence altimétrique initialement donnée par une hauteur-sol 'AGL' ou 'ASFC')
+			- **[<ffExt>=Yes]** - Optional FreeFligth-Extended - Le troisième élément du tableau est optionnel. Il présente un indicateur binaire qui décrit si le Plancher de la zone est fixé au dessus du FL115
 	
 		.. code::
 
 			*** Quelques exemples concrets
 			*AAlt ["SFC/1000FT ASFC", "0m/1981m"]
 			*AAlt ["1000FT AMSL/3000FT AMSL", "304m/914m"]
-			*AAlt ["1000FT ASFC-3500FT AMSL/FL195", "1008m/5943m"] 			(double référence altimétrique; cf.'TMA GENEVE 1')
-			*AAlt ["3000FT AGL-FL115/FL175", "3505m/5334m", "ffExt=Yes"] 	(zone dont le plancher est fixé au dessus du FL115; cf.'LTA FRANCE 3 ALPES 6.20') 
+			*AAlt ["1000FT ASFC-3500FT AMSL/FL195", "1008m/5943m"]        (double référence altimétrique; cf.'TMA GENEVE 1')
+			*AAlt ["3000FT AGL-FL115/FL175", "3505m/5334m", "ffExt=Yes"]  (zone dont le plancher est fixé au dessus du FL115; cf.'LTA FRANCE 3 ALPES 6.20')
 
 
 Official Data or Map
