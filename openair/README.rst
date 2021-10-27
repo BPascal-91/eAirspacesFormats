@@ -273,9 +273,8 @@ Documentation
 	
 * **\*AH2 - Second Airspace Ceiling** - Seconde altitude du plafond de la zone
 	1. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec une double-référence-altimétrique au niveau de son plafond
-	Le formalisme des niveaux/altidudes reste identique a ceux décrits pour les éléments **AL & AH** (présentés ci-dessus)
-	
-	Deux cas d'exemples concrets: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
+		Le formalisme des niveaux/altidudes reste identique a ceux décrits pour les éléments **AL & AH** (présentés ci-dessus)
+		Deux cas d'exemples concrets: |imgLFLB1-doubleRefAltiUpper| ou |imgLFR210-doubleRefAltiUpper|
 
 		.. code::
 		
@@ -289,9 +288,8 @@ Documentation
 
 * **\*AL2 - Second Airspace Floor** - Seconde altitude de plancher de la zone
 	1. |imgOpenairBeta| Cette information est exclusivement présente dans le cas d'une zone décrite avec une double-référence-altimétrique au niveau de son plancher
-	Le formalisme des niveaux/altidudes reste identique a ceux décrits pour les éléments **AL & AH** (présentés ci-dessus)
-	
-	Un cas d'exemple concret: |LFLC1-20-doubleRefAltiUpper|
+		Le formalisme des niveaux/altidudes reste identique a ceux décrits pour les éléments **AL & AH** (présentés ci-dessus)
+		Un cas d'exemple concret: |LFLC1-20-doubleRefAltiUpper|
 
 		.. code::
 		
