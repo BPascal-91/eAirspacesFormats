@@ -318,7 +318,7 @@ Documentation
 			*AAlt ["3000FT AGL-FL115/FL175", "3505m/5334m", "ffExt=Yes"]  (zone dont le plancher est fixé au dessus du FL115; cf.'LTA FRANCE 3 ALPES 6.20')
 
 * **\*AMzh - Radio Frequency list** - Liste des Fréquences Radio
-	1. |imgOpenairBeta| Ces nouveaux tableau contient la 'Liste des Fréquences Radio' associée à une zone aérienne filtrée dans la bande de fréquence de [118.00 à 137.00 Mhz]
+	1. |imgOpenairBeta| Ce nouveau tableau contient la 'Liste des Fréquences Radio' associée à une zone aérienne filtrée dans la bande de fréquence de [118.00 à 137.00 Mhz]
 
 		.. code::
 		
